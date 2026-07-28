@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "title": "Ce qui se passe depuis la place du marché",
+    "subtitle": "Un récit du territoire — et pourquoi vous êtes dans cette liste",
+    "territory": "Pays La Châtre en Berry / Boischaut Sud",
+    "note": "Document vivant — mai 2026. Réagissez sur le Framapad (bouton vert ci-dessus « écrire sur le Framapad »).",
+    "created": "2026-05-19",
+    "framapad_url": "https://mypads2.framapad.org/mypads/?/mypads/group/pays-la-chatre-en-berry-8b6qvd97k/pad/view/collectes-parc-des-parelles-14-06-8aiwe96b",
+    "timeline_public_url": "https://utopia.cooplab.org/artefacts/timelines/marche-slides-ancres/timeline-marche-framagroupe.html"
+  },
+  "groups": [
+    { "id": "scene",       "label": "🏛 Scènes du marché" },
+    { "id": "circulation", "label": "📨 Ce qui a circulé" },
+    { "id": "horizon",     "label": "🌱 Ce qui s'ouvre" }
+  ],
+  "eras": [
+    {
+      "id": "",
+      "headline": "Avant la liste",
+      "start_date": { "year": 2024, "month": 11, "day": 1 },
+      "end_date":   { "year": 2026, "month": 5,  "day": 10 },
+      "text": "Ce qui a fermenté"
+    },
+    {
+      "id": "",
+      "headline": "Liste \"Conversations en lisières\" activée",
+      "start_date": { "year": 2026, "month": 5,  "day": 11 },
+      "end_date":   { "year": 2026, "month": 12, "day": 31 },
+      "text": "Vous y êtes"
+    }
+  ],
+  "events": [
+    {
+      "id": "pm-01", "group": "scene",
+      "title": "Un bourg rural dans la \"diagonale du vide\"",
+      "start_date": { "year": 2026, "month": 1, "day": 1 },
+      "statut": "reel", "posture": "situé",
+      "summary": "Pays La Châtre en Berry, Boischaut Sud - lisière Indre/Creuse. 28 167 habitants, trois intercommunalités réunies dans un même Pays. Ce territoire que vous habitez ou que vous traversez régulièrement.",
+      "situation": "Une place de marché ordinaire dans la diagonale du vide. Un territoire en déclin à gérer ? Ou un territoire vivant capable de produire un projet collectif singulier ? ",
+      "enjeu": "Qu'est-ce qui palpite et mérite d'être rendu visible ici ? Qu'est-ce qui se passe que personne ne voit encore dans son ensemble ?",
+      "effet": "Cette question-là, c'est le point de départ de cette liste.",
+      "actors": ["Habitants du Pays La Châtre en Berry"],
+      "tags": ["pays-la-chatre", "boischaut-sud", "territoire"],
+      "reflexive_notes": ["Un territoire dans la 'diagonale du vide', peut être. Mais alors un \"vide\" qui pense, qui agit, qui invente, comment on appelle ça ?"]
+    },
+    {
+      "id": "pm-02", "group": "scene",
+      "title": "Ce qui palpite place du marché",
+      "start_date": { "year": 2026, "month": 2, "day": 1 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Depuis février 2026 : conversations au café, dedans, dehors sur la terrasse, rencontres informelles régulières, fils qui se nouent sans agenda. La place du marché de La Châtre - tous les samedis matin - comme endroit où les choses arrivent.",
+      "situation": "Pas un événement, pas un projet. Une régularité. Les gens y viennent pour autre chose - c'est précisément pour ça que la parole y est libre.",
+      "enjeu": "Qu'est-ce qui se joue là, dans ces échanges apparemment ordinaires ?",
+      "effet": "Des observations qui vont cristalliser en avril.",
+      "actors": ["Habitants du Pays La Châtre"],
+      "tags": ["place-du-marche", "rencontres", "ordinaire"],
+      "reflexive_notes": ["'Un endroit où les choses arrivent parce qu'on est là, disponible, habitant.'"]
+    },
+    {
+      "id": "pm-03", "group": "scene",
+      "title": "La table du 11 avril - quelque chose se passe",
+      "start_date": { "year": 2026, "month": 4, "day": 11 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Samedi matin, terrasse de la place du marché. Une dizaine d'habitants·es des trois intercommunalités. Des actifs (soin, commerce), des retraités - et un habitant devenu récemment élu depuis des 'imaginaires désirables' partagés. Constat partagé : des initiatives citoyennes existent partout sur le territoire, mais personne ne voit l'ensemble. Décision spontanée : une rencontre citoyens/élus avant l'été, au Parc des Parelles.",
+      "situation": "Personne n'avait prévu que ça tournerait comme ça. Pas de programme, pas d'animateur désigné. Le diagnostic collectif est apparu tout seul.",
+      "enjeu": "L'élu l'a dit : 'Saisissons l'effervescence avant l'été, sinon le soufflé risque de retomber.' Ce n'était pas du pessimisme - c'était du réalisme attentif.",
+      "effet": "Ce moment est le point d'origine de tout ce qui suit - et de cette liste.",
+      "actors": ["Habitants des 3 intercommunalités", "associatifs", "élus"],
+      "tags": ["table-du-marche", "effervescence", "collectif", "initiatives-citoyennes"],
+      "reflexive_notes": [
+        "Il n'y avait pas de programme, mais des présences d'imaginaires désirables. Les deux bouts ont été tenus : le désir ET la fragilité du réel.",
+        "Pléthore de micro-initiatives citoyennes - mais le maillage visibilisé et sa mise en récit manque. C'est exactement pour ça que cette liste existe."
+      ],
+      "bifurcation": true
+    },
+    {
+      "id": "tr-01", "group": "circulation",
+      "title": "Rentré du marché, premiers envois",
+      "start_date": { "year": 2026, "month": 4, "day": 11 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Le soir même, envoi à quelques personnes pour relater ce qui s'est passé autour de la table.",
+      "situation": "Un geste simple : partager ce qui vient de se passer avant que ça s'évapore.",
+      "enjeu": "Transmettre la scène sans la déformer, sans en faire plus qu'elle n'est.",
+      "effet": "La boucle s'enclenche : la scène commence à circuler.",
+      "actors": ["Habitants"],
+      "tags": ["transmission", "vie associative"],
+      "reflexive_notes": [],
+      "media": {
+        "url": "https://youtu.be/uSOKjfoKuIM?si=wclmLXD7DpweN6Hu",
+        "caption": "La rencontre des bibliothèques intérieures — Raphaëlle Bats"
+      }
+    },
+    {
+      "id": "tr-02", "group": "circulation",
+      "title": "Mail 'Nos utopies ?' - la scène partagée",
+      "start_date": { "year": 2026, "month": 4, "day": 18 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Mail partagé : le récit de la scène du marché, une invitation à en parler. Le titre : 'Nos utopies ?'. L'ouverture : 'Hello, Permettez vous que j'emprunte vos oreilles... Ha mais non je m'égare, je vous partage un moment spécial Pays La Châtre en Berry.'",
+      "situation": "Pas un compte rendu officiel. Un récit de ce qui s'est passé - en faisant confiance à la scène pour parler d'elle-même.",
+      "enjeu": "Que les gens qui n'étaient pas là puissent se sentir concernés, sans qu'on leur impose une interprétation.",
+      "effet": "L'information circule et va chercher du compagnonage. ",
+      "actors": ["habitants", "vie associative"],
+      "tags": ["nos-utopies", "exhale", "recit"],
+      "reflexive_notes": [
+        "'Ha mais non je m'égare' - auto-interruption qui renonce au grand récit avant qu'il s'installe. Confiance à la scène.",
+        "Trois questions ouvertes à la fin, pas rhétoriques : 'Qu'en pensez vous ? En seriez vous ?'"
+      ]
+    },
+    {
+      "id": "tr-04", "group": "circulation",
+      "title": "'Créer l'envie d'avoir ENVIE'",
+      "start_date": { "year": 2026, "month": 4, "day": 25 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Deux semaines après la table du marché, retour concernant la vidéo 'bibliothèques vivantes' . Cinq points précis sur les conditions de possibilité. Et cette phrase, en majuscules : 'la première chose à faire, c'EST DE créer l'envie d'avoir ENVIE'.",
+      "situation": "Pas un refus mais un diagnostic de terrain. Réalisme d'optimiste : nommer ce que ça demande vraiment.",
+      "enjeu": "Les obstacles nommés (rayons vides, incapacité d'écoute, ego, faible participation) sont exactement ce que cette liste essaie de contourner.",
+      "effet": "La formule 'créer l'envie d'avoir ENVIE'  dit bien ce à quoi cette liste aspire.",
+      "actors": ["Entre habitants"],
+      "tags": ["conditions-de-possibilite", "formule-terrain"],
+      "reflexive_notes": [
+        "'Créer l'envie d'avoir ENVIE' - pas 'comment faire penser un collectif' mais comment créer les conditions pour que l'envie émerge. Question d'amorçage.",
+        "Ce retour est une collaboration critique qui dit ce qui manque, sans décourager."
+      ],
+      "bifurcation": true
+    },
+    {
+      "id": "pm-04", "group": "scene",
+      "title": "Le mail d'invitation ",
+      "start_date": { "year": 2026, "month": 5, "day": 1 },
+      "statut": "reel", "posture": "situe",
+      "summary": "\"Contexte : Un essaim d'habitants.tes se retrouvent place du marché, constatent moultes initiatives citoyennes locales, l'envie de se voir et de se parler. \nL'envie est la suivante, se retrouver à l'amphithéâtre des Parelles, se raconter nos aspirations et préoccupations de celles qui font parfois naitre le geste ;)\n\nÇa vous dit?\nOn trouve un outil pour se caler une date?\nOu comme ça le dimanche 14 juin? ^^",
+      "situation": "", "enjeu": "", "effet": "",
+      "actors": ["Habitants", "vie associative"],
+      "tags": ["participation citoyenne", "continuité"],
+      "reflexive_notes": ["La place comme lieu qui fait surgir la mémoire - pas par un programme, par la régularité de la présence."]
+    },
+    {
+      "id": "tr-05", "group": "circulation",
+      "title": "Assemblée Générale d'Exhale - la scène portée dans la vie associative ",
+      "start_date": { "year": 2026, "month": 4, "day": 28 },
+      "statut": "reel", "posture": "situe",
+      "summary": "AG de l'association Exhale, La Châtre. La scène du 11 avril est partagée lors du temps d'échange libre. Exhale programme déjà une rencontre citoyenne le 12 juin avec la Région Centre-Val de Loire.",
+      "situation": "La proposition habitante issue de la table du marché rencontre un agenda associatif existant. Sans être absorbée.",
+      "enjeu": "Comment une dynamique informelle entre en contact avec une institution sans perdre ce qui fait sa force ?",
+      "effet": "Formulation d'un mail d'invitation.",
+      "actors": ["Habitants", "bénévoles", "associatifs"],
+      "tags": ["exhale", "ag", "convergence"],
+      "reflexive_notes": []
+    },
+    {
+      "id": "tr-06", "group": "circulation",
+      "title": "Vous avez reçu ce mail",
+      "start_date": { "year": 2026, "month": 5, "day": 11 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Envoi du mail d'invitation à framagroupes. Profil hétérogène : hommes et femmes, jeunes et moins jeunes, actifs et retraités, néos et du cru, citoyens, associatifs, élus. ",
+      "situation": "Pas une newsletter. Pas un réseau mais quelque chose de plus modeste : un espace où des fragments de ce qui se transforme sur ce territoire peuvent commencer à se percevoir mutuellement. Une amorce de maillage ? ",
+      "enjeu": "Pourquoi vous et pas d'autres ? Parce que nous nous parlons depuis nos propres implications dans le territoire vécu - pas depuis un programme.",
+      "effet": "14 réponses positives : 13 sur Framagroupes, 1 en direct. La liste commence à exister.",
+      "actors": ["Habitants du Pays La Châtre"],
+      "tags": ["invitation", "framagroupes", "essaim"],
+      "reflexive_notes": [
+        "Le mail part d'un milieu déjà vivant, pas d'un projet à imposer. Vous êtes ce milieu.",
+        "\"Tu peux lire sans jamais répondre. Te désinscrire à tout moment. Contribuer si l'envie vient.\""
+      ]
+    },
+    {
+      "id": "tr-07", "group": "circulation",
+      "title": "Vous y êtes - la liste est vivante",
+      "start_date": { "year": 2026, "month": 5, "day": 18 },
+      "statut": "reel", "posture": "situe",
+      "summary": "La liste conversations-en-lisieres@framagroupes.org est créée et active. 13 abonnés au 18 mai. Cette amorce de frise chronologique est le premier envoi.",
+      "situation": "Pas encore de nom pour ce que c'est. Un essaim, peut-être - une intelligence qui circule sans centre unique. Une proposition est sortie un jour de marché : La ruche citoyenne ? A vos propositions....",
+      "enjeu": "Jardiner une \"culture vivante de l'autorisation\" au Pays. Créer les conditions d'une narration collective que le territoire lui-même peut raconter.",
+      "effet": "C'est maintenant. Vous lisez ceci.",
+      "actors": ["15 abonné.e.s direct.e.s"],
+      "tags": ["conversations-en-lisieres", "framagroupes", "maintenant"],
+      "reflexive_notes": [
+        "'Fiez-vous au caractère inépuisable du murmure.' — André Breton. Un collectif pense aussi dans ses hésitations, ses reprises, ses résonances discrètes.",
+        "Ce n'est pas une newsletter. Ce n'est pas un réseau. Vous décidez vous-mêmes de ce que ça devient."
+      ]
+    },
+    {
+      "id": "sc-01", "group": "scene",
+      "title": "Réunion publique — PNR Sud Berry",
+      "start_date": { "year": 2026, "month": 5, "day": 22 },
+      "statut": "reel", "posture": "situe",
+      "summary": "Réunion publique de soutien au projet de Parc Naturel Régional Sud Berry. Élus, acteurs économiques, associations, citoyens. Salle des Fêtes, 4 av. André Malraux, La Châtre — 18h00.",
+      "situation": "Le projet PNR circule depuis longtemps dans le territoire. Cette réunion publique en marque une étape.",
+      "enjeu": "Ce qui se passe place du marché et ce qui se passe dans les instances — sont-ils dans le même mouvement ?",
+      "effet": "", "actors": [],
+      "tags": ["PNR", "territoire", "institution", "La-Chatre"],
+      "reflexive_notes": [],
+      "bifurcation": false
+    },
+    {
+      "id": "ou-02", "group": "horizon",
+      "title": "Rencontre citoyenne Exhale et \"Cap sur la citoyenneté\" à Briantes",
+      "start_date": { "year": 2026, "month": 6, "day": 12 },
+      "statut": "prospectif", "posture": "situe",
+      "summary": "Rencontre citoyenne organisée par Exhale en partenariat avec la Région Centre-Val de Loire. Premier espace public où la dynamique du 11 avril pourrait rencontrer un agenda institutionnel.",
+      "situation": "Horizon opérationnel.",
+      "enjeu": "Comment la dynamique habitante - informelle, sans programme - tient-elle dans un espace plus institutionnel ?",
+      "effet": "<a href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=rG0aykHLREqfFBaq4Eh6hFTipIDaElJEu9R7u2lvbzRUMDNZVVJST1JFVTJXU0E4NjEyQkpXU0Q3Vi4u\" target=\"_blank\">Exhale accueille « Cap sur la citoyenneté » à Briantes le 12 juin — S'inscrire</a> &nbsp;|&nbsp; <a href=\"https://www.centre-valdeloire.fr/agir/faire-vivre-la-democratie-et-legalite/democratie-permanente\" target=\"_blank\">Tout le programme Cap sur la citoyenneté — Région Centre-Val de Loire</a>",
+      "actors": ["Exhale", "Région Centre-Val de Loire", "habitants du Pays"],
+      "tags": ["rencontre-citoyenne", "institution", "exhale"],
+      "reflexive_notes": []
+    },
+    {
+      "id": "ou-03", "group": "horizon",
+      "title": "Rencontre citoyens / élus aux Parelles ? ",
+      "start_date": { "year": 2026, "month": 6, "day": 14 },
+      "statut": "prospectif", "posture": "situe",
+      "summary": "Proposition née à la table du 11 avril : une rencontre citoyens/élus au Parc des Parelles. Des élus semblent partants. La fenêtre : avant l'été.",
+      "situation": "'Avant l'été, sinon le soufflé retombe' - dixit l'élu. La proposition tient encore. Elle attend.",
+      "enjeu": "Un espace de délibération locale, non formaté. 'Un autre temps ici la citoyenneté local ?'",
+      "effet": "À venir - et peut-être que vous y serez.",
+      "actors": ["Habitants", "associatifs", "élus"],
+      "tags": ["rencontre-elus-citoyens", "partages", "parelles"],
+      "reflexive_notes": ["Si ce moment a lieu, il faudra le raconter. Peut-être que certains d'entre vous y seront."]
+    }
+  ]
+}

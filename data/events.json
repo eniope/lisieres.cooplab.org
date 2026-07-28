@@ -1,0 +1,24 @@
+{
+  "titre_section": "Prochaines rencontres",
+  "lien_toutes": "/care/",
+  "events": [
+    {
+      "id": "care-visio-2026-04-10",
+      "date_affichee": "10 avr. · 12h30",
+      "statut": "ouvert",
+      "titre": "Design de territoires robustes",
+      "description": "Dynamiques interdisciplinaires, croisements médecine / arts / sciences sociales, robustesse territoriale et alimentation.",
+      "avec": "Antoine Fenoglio & Marcela Mussi",
+      "lien": "/care/visio-10-avril"
+    },
+    {
+      "id": "care-visio-2026-05-xx",
+      "date_affichee": "Mai 2026",
+      "statut": "annonce",
+      "titre": "Éthique, politique et transformation sociétale",
+      "description": "Résister à l'épuisement, créer du vivant, gouvernance coopérative autour de la robustesse.",
+      "avec": "",
+      "lien": "/care/"
+    }
+  ]
+}

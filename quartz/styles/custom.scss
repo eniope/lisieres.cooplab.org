@@ -1,0 +1,442 @@
+/* ================================================= */
+/* IMPORTS DE BASE (INCHANGÉS) */
+/* ================================================= */
+
+@use "./base.scss";
+@use "./variables.scss" as *;
+
+/* -- Modules Morrowind / Quartz -- */
+@use "./custom/image-adjustments.scss";
+@use "./custom/callout-adjustments.scss";
+@use "./custom/column-callout.scss";
+@use "./custom/caption-callout.scss";
+@use "./custom/infobox-callout.scss";
+@use "./custom/maintenance-template-callout.scss";
+@use "./custom/transclusion-adjustments.scss";
+@use "./custom/ayembedt-font.scss";
+
+/* ================================================= */
+/* PAGE TITLE + LOGO PNG */
+/* Colonne gauche — zone contrainte */
+/* ================================================= */
+
+.page-title {
+  width: 100%;
+  height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+}
+
+.page-title-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.site-logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ------------------------------ */
+/* LOGO — MOBILE */
+/* ------------------------------ */
+
+@media screen and ($mobile) {
+  .page-title {
+    height: 150px;
+  }
+
+  .site-logo {
+    width: 100%;
+    max-height: 100%;
+  }
+
+  #quartz-body .sidebar.left {
+    margin-top: 0.5rem;
+  }
+
+  .sidebar.left .spacer.mobile-only {
+    flex: 0.5 0.5 auto;
+  }
+}
+
+/* ================================================= */
+/* EXPLORER */
+/* ================================================= */
+
+#explorer-ul {
+  max-height: calc(100vh - 400px);
+}
+
+/* ================================================= */
+/* IMAGE ZOOM (SAUF LOGO) */
+/* ================================================= */
+
+img:not(.site-logo) {
+  cursor: zoom-in;
+}
+
+img:active:not(.site-logo) {
+  cursor: zoom-out;
+  display: block;
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  margin: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain;
+  background: var(--background-primary);
+}
+
+/* ================================================= */
+/* KBD */
+/* ================================================= */
+
+kbd {
+  font-family: Consolas, "Lucida Console", monospace;
+  display: inline-block;
+  padding: 0 4px;
+  margin: 2px;
+  border-radius: 3px;
+  font-size: small;
+  font-weight: 600;
+  line-height: 1.1rem;
+  letter-spacing: 1px;
+  color: #555;
+  background: #eee;
+  box-shadow: 1px 1px 1px #777;
+  vertical-align: text-bottom;
+  user-select: none;
+}
+
+kbd:hover,
+kbd:hover * {
+  color: black;
+}
+
+kbd:active,
+kbd:active * {
+  color: black;
+  box-shadow: 1px 1px 0px #ddd inset;
+}
+
+kbd kbd {
+  padding: 0;
+  margin: 0 1px;
+  background: none;
+  box-shadow: none;
+  vertical-align: baseline;
+}
+
+/* ================================================= */
+/* DOWNLOAD LINK */
+/* ================================================= */
+
+a.mmw-download-link {
+  display: inline-block;
+  width: 100%;
+  padding: 6px;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: #8f9fa926;
+  transition: background-color 0.4s;
+}
+
+a.mmw-download-link:hover,
+a.mmw-download-link:active {
+  background-color: #8f9fa93d;
+}
+
+a.mmw-download-link::before {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+[saved-theme="light"] a.mmw-download-link::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2rem' height='1.2rem' viewBox='0 0 24 24' fill='none' stroke='%232b2b2b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' x2='12' y1='15' y2='3'/%3E%3C/svg%3E");
+}
+
+[saved-theme="dark"] a.mmw-download-link::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2rem' height='1.2rem' viewBox='0 0 24 24' fill='none' stroke='%23ebebec' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' x2='12' y1='15' y2='3'/%3E%3C/svg%3E");
+}
+
+a.mmw-download-link div.popover {
+  display: none;
+}
+
+/* ================================================= */
+/* MENU HORIZONTAL (DANS LE FLUX, ALIGNÉ BREADCRUMB) */
+/* ================================================= */
+
+.links-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 0.75rem 0 0.5rem;
+  flex-wrap: wrap;
+}
+
+.links-header-item {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  position: relative;
+  padding-bottom: 0.35rem;
+  text-decoration: none;
+}
+
+/* underline maîtrisé */
+.links-header-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.links-header-item:hover::after {
+  opacity: 1;
+}
+
+/* ------------------------------ */
+/* MENU — MOBILE SCROLL */
+/* ------------------------------ */
+
+@media screen and ($mobile) {
+  .links-header {
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    min-width: 0;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+  }
+
+  .links-header::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* ================================================= */
+/* MENU — VISIBILITÉ MOBILE */
+/* ================================================= */
+
+@media screen and ($mobile) {
+  .links-header {
+    display: flex;          /* sécurité : force le rendu */
+    margin-top: 0.5rem;     /* le fait réapparaître dans le viewport */
+  }
+}
+
+/* ================================================= */
+/* AJUSTEMENT FIN — COLONNE GAUCHE (DESKTOP) */
+/* ================================================= */
+
+@media screen and (min-width: 769px) {
+  #quartz-body .sidebar.left {
+    margin-top: -0.25rem; /* ajuste à -0.25rem si tu veux plus subtil */
+  }
+}
+/* ================================================= */
+/* AJUSTEMENTS FINS — ALIGNEMENT MORROWIND */
+/* ================================================= */
+
+/* 1️⃣ MENU : typo légèrement plus discrète */
+.links-header-item {
+  font-size: 1.35rem;   /* ↓ depuis 1.5rem */
+  font-weight: 700;
+}
+
+/* 2️⃣ COLONNE GAUCHE : encore un peu plus haut (desktop uniquement) */
+@media screen and (min-width: 769px) {
+  #quartz-body .sidebar.left {
+    margin-top: -0.9rem; /* ajuste entre -0.75rem et -1rem si besoin */
+  }
+}
+
+/* 3️⃣ MENU : légèrement plus bas dans le flux */
+.links-header {
+  margin-top: 1.1rem;     /* ↓ le menu */
+  margin-bottom: 1.4rem;  /* prépare l’espace avant le breadcrumb */
+}
+
+/* 4️⃣ SÉPARATION MENU / BREADCRUMB */
+.links-header {
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.9rem;
+}
+
+/* Breadcrumb très proche du titre / mot "Conversations" */
+.breadcrumbs {
+  margin-top: 0.2rem;     /* remonte le breadcrumb */
+  margin-bottom: 1.2rem;  /* respiration avant le titre */
+  font-size: 0.95rem;     /* un peu plus discret, façon Morrowind */
+}
+
+/* ================================================= */
+/* AJUSTEMENT FINAL — COLONNE DROITE (ALIGNEMENT HAUT) */
+/* ================================================= */
+
+@media screen and (min-width: 769px) {
+  #quartz-body .sidebar.right {
+    margin-top: 2.5rem; /* ajuste finement entre 0.75rem et 1rem */
+  }
+}
+
+/* Masquer complètement la zone édition / historique */
+#edit-btn-container {
+  display: none !important;
+}
+
+/* Seuil d'exploration – bouton Twine */
+
+.exploration-entry {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.exploration-entry a.exploration-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background-color: #1f2937;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exploration-entry a.exploration-button:hover {
+  background-color: #374151;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+/**
+ * custom-utopia.scss
+ * Surcharge couleur pour utopia.cooplab.org
+ * À importer APRÈS custom.scss dans quartz/styles/custom.scss
+ *
+ * Usage : ajouter en fin de custom.scss :
+ *   @use "./custom/utopia-colors.scss";
+ */
+
+/* ================================================= */
+/* ACCENT VERT SAGE — liens, survols, soulignements  */
+/* ================================================= */
+
+/* Les variables --secondary et --tertiary sont déjà
+   settées dans quartz.config.ts (couleurs lightMode/darkMode).
+   Ce fichier gère les overrides CSS qui ne passent pas
+   par les variables Quartz. */
+
+/* Lien de retour hub — discret */
+.links-header-hub {
+  font-size: 0.95rem;
+  font-weight: 400;
+  opacity: 0.55;
+  margin-left: auto;     /* pousse à droite dans le flex */
+}
+
+.links-header-hub:hover {
+  opacity: 0.9;
+}
+
+/* ================================================= */
+/* CARE — CALLOUT SPÉCIFIQUE                         */
+/* Syntaxe Obsidian : > [!care]                      */
+/* ================================================= */
+
+.callout[data-callout="care"] {
+  --color: #4A7C59;
+  --border: #4A7C5940;
+  --bg: #4A7C5910;
+  --callout-icon: "🌿";
+}
+
+/* ================================================= */
+/* RENCONTRES — composant UpcomingEvents (futur)     */
+/* Structure HTML attendue :                         */
+/*   <div class="upcoming-events">                   */
+/*     <div class="event-item">                      */
+/*       <span class="event-date">10 avr.</span>     */
+/*       <div class="event-body">...</div>            */
+/*     </div>                                        */
+/*   </div>                                          */
+/* ================================================= */
+
+.upcoming-events {
+  margin-top: 1.5rem;
+}
+
+.upcoming-events h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.75rem;
+}
+
+.event-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--lightgray);
+}
+
+.event-item:first-of-type {
+  border-top: none;
+}
+
+.event-date {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--secondary);
+  width: 60px;
+  line-height: 1.4;
+}
+
+.event-body {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--darkgray);
+}
+
+.event-body strong {
+  display: block;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.15rem;
+}

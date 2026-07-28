@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Le coulissant du temps vécu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f0ece3;
+    --paper: #fdfaf3;
+    --ink: #1e1b16;
+    --muted: #7a7165;
+    --line: #d8d0c2;
+    --traces: #5c4d3a;
+    --now: #9b5c38;
+    --future: #b0a090;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0 0 3rem;
+  }
+
+  .app {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  /* ── VERSION SELECTOR ── */
+  .ver-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-wrap: wrap;
+  }
+
+  .ver-label {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 0.4rem;
+  }
+
+  .step-btn {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.65rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .step-btn:hover { border-color: var(--now); color: var(--now); }
+  .step-btn.active { background: var(--now); border-color: var(--now); color: var(--paper); }
+  .step-btn .vname { font-size: 0.52rem; }
+
+  .step-btn svg { flex-shrink: 0; }
+  .step-btn svg .pad { fill: var(--muted); opacity: 0.45; transition: fill 0.15s, opacity 0.15s; }
+  .step-btn:hover svg .pad { fill: var(--now); opacity: 0.8; }
+  .step-btn.active svg .pad { fill: var(--paper); opacity: 0.85; }
+
+  /* ── HEADER ── */
+  header { margin-bottom: 2rem; }
+
+  .eyebrow {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--now);
+    margin-bottom: 0.75rem;
+  }
+
+  .quote-main {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 680px;
+  }
+
+  .quote-main strong {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--now);
+    border-bottom: 1px solid var(--now);
+  }
+
+  .quote-secondary {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.72rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-top: 0.9rem;
+    max-width: 560px;
+    border-left: 2px solid var(--line);
+    padding-left: 0.8rem;
+  }
+
+  .quote-secondary em { color: var(--ink); font-style: normal; }
+  .quote-secondary .attr {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+
+  /* ── ZONE LABELS ── */
+  .zone-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 0.5rem;
+  }
+
+  .zone-legend {
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.75;
+  }
+
+  .v0-bar .zone-legend { font-size: 0.72rem; }
+  .v0-bar .zone-legend .l1 { opacity: 0.6; }
+  .v0-bar .zone-legend .l2 { font-weight: 500; font-size: 0.8rem; opacity: 1; }
+
+  .v1-bar .zone-legend { font-size: 0.63rem; }
+  .v1-bar .zone-legend .l1 { opacity: 0.55; }
+  .v1-bar .zone-legend .l2 { font-weight: 500; opacity: 1; }
+
+  .zone-legend.left { color: var(--traces); }
+  .zone-legend.right { color: var(--future); text-align: right; }
+
+  /* ── STRIP ── */
+  .strip-outer { position: relative; padding-bottom: 2.2rem; }
+
+  .now-float {
+    position: absolute;
+    bottom: 0.45rem;
+    transform: translateX(-50%);
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--now);
+    white-space: nowrap;
+    pointer-events: none;
+    transition: left 0.04s linear;
+  }
+
+  .strip-wrap {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--paper);
+    cursor: ew-resize;
+    user-select: none;
+  }
+
+  canvas { display: block; width: 100%; height: 130px; }
+
+  .pivot-line {
+    position: absolute;
+    top: 0; bottom: 0; width: 2px;
+    background: var(--now);
+    pointer-events: none;
+    box-shadow: 0 0 14px rgba(155,92,56,.55), 0 0 3px rgba(155,92,56,.9);
+    transition: left 0.04s linear;
+  }
+
+  .pivot-dot {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--now);
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--now);
+    pointer-events: none;
+    transition: left 0.04s linear;
+  }
+
+  /* ── SLIDER ── */
+  .slider-wrap { margin-top: 0.3rem; margin-bottom: 2rem; }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%; height: 2px;
+    background: var(--line);
+    outline: none; cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--now);
+    box-shadow: 0 2px 10px rgba(155,92,56,.45);
+    transition: transform 0.1s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  input[type="range"]::-moz-range-thumb {
+    width: 22px; height: 22px;
+    border-radius: 50%; background: var(--now);
+    border: none; box-shadow: 0 2px 10px rgba(155,92,56,.45);
+  }
+
+  /* ── NARRATIVE CARDS ── */
+  .narrative { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .narrative.bridged { grid-template-columns: 1fr auto 1fr; gap: 0; }
+
+  .bridge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.9rem;
+  }
+
+  .bridge-text {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    line-height: 1.8;
+    opacity: 0.7;
+  }
+
+  .nc { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; }
+
+  .nc-label {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.63rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nc-label::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .nc.traces .nc-label { color: var(--traces); }
+  .nc.traces .nc-label::before { background: var(--traces); opacity: 0.7; }
+  .nc.recit .nc-label { color: var(--now); }
+  .nc.recit .nc-label::before { background: transparent; border: 1.5px solid var(--now); }
+
+  .nc-body { font-size: 1rem; line-height: 1.6; color: var(--muted); font-style: italic; }
+
+  .nc-subtext {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--traces);
+    opacity: 0.6;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .nc-subtext.open { color: var(--muted); }
+
+  .posture-selector { display: flex; gap: 0.4rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+  .posture-btn {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .posture-btn:hover { border-color: var(--now); color: var(--now); }
+  .posture-btn.active { background: var(--now); border-color: var(--now); color: var(--paper); }
+
+  textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    resize: none;
+    outline: none;
+    min-height: 88px;
+  }
+
+  textarea::placeholder { color: var(--future); font-style: italic; }
+
+  .nc-urgent {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    color: var(--now);
+    opacity: 0.7;
+    margin-top: 0.65rem;
+    line-height: 1.55;
+    border-top: 1px solid var(--line);
+    padding-top: 0.55rem;
+  }
+
+  /* ── FOOTER ── */
+  .sep { border: none; border-top: 1px solid var(--line); margin: 1rem 0 0.8rem 0; }
+
+  .verstohlen { font-size: 0.82rem; color: var(--muted); font-style: italic; line-height: 1.5; max-width: 520px; }
+
+  .question-finale { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+
+  .question-finale .qf-label {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--now);
+    margin-bottom: 0.6rem;
+  }
+
+  .question-finale p {
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 640px;
+  }
+
+  @media (max-width: 600px) {
+    .narrative, .narrative.bridged { grid-template-columns: 1fr; }
+    .bridge { display: none !important; }
+    canvas { height: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ver-bar">
+  <span class="ver-label">version —</span>
+  <button class="step-btn active" data-v="0">
+<span class="vname">le geste</span>
+  </button>
+  <button class="step-btn" data-v="1">
+<span class="vname">le cap</span>
+  </button>
+  <button class="step-btn" data-v="2">
+<span class="vname">l'urgence</span>
+  </button>
+  <button class="step-btn" data-v="3">
+<span class="vname">la distinction</span>
+  </button>
+  <button class="step-btn" data-v="4">
+<span class="vname">l'acte</span>
+  </button>
+  <button class="step-btn" data-v="5">
+<span class="vname">la question</span>
+  </button>
+</div>
+
+<div class="app">
+
+  <header data-min="1">
+    <p class="eyebrow">le coulissant du temps vécu</p>
+    <p class="quote-main">« L'avenir, ce n'est pas ce qui va arriver.<br>C'est <strong>ce que nous allons en faire.</strong> »</p>
+    <p class="quote-secondary" data-min="2">
+      « Si nous produisons nos propres récits, c'est pour éviter que <em>d'autres les racontent à notre place.</em> »
+      <span class="attr"><a href="https://lecoleduterrain.fr/maniere-de-faire/comment-faire-recit-de-nos-experiences-collectives/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">Benjamin Roux — L'art de conter nos expériences collectives</a></span>
+    </p>
+  </header>
+
+  <div class="zone-bar v0-bar">
+    <div class="zone-legend left">
+      <div class="l1">Jours d'avant</div>
+      <div class="l2">traces irrévocables</div>
+    </div>
+    <div class="zone-legend right">
+      <div class="l1">Jours d'après</div>
+      <div class="l2">à écrire</div>
+    </div>
+  </div>
+
+  <div class="zone-bar v1-bar" data-min="1">
+    <div class="zone-legend left">
+      <div class="l1">jours d'avant</div>
+      <div class="l2">traces</div>
+    </div>
+    <div class="zone-legend right">
+      <div class="l1">récit à écrire</div>
+      <div class="l2">jours d'après</div>
+    </div>
+  </div>
+
+  <div class="strip-outer">
+    <div class="now-float" id="nowFloat">maintenant</div>
+    <div class="strip-wrap" id="stripWrap">
+      <canvas id="canvas"></canvas>
+      <div class="pivot-line" id="pivotLine"></div>
+      <div class="pivot-dot" id="pivotDot"></div>
+    </div>
+  </div>
+
+  <div class="slider-wrap">
+    <input type="range" id="slider" min="2" max="98" value="42" step="0.5" />
+  </div>
+
+  <div class="narrative" id="narrative" data-min="3">
+    <div class="nc traces">
+      <div class="nc-label">Traces — jours d'avant</div>
+      <p class="nc-body">Ce qui a été vécu, sédimenté, nommé.<br>Tentons de ne pas nous le faire voler.</p>
+      <p class="nc-subtext" data-min="4">matière brute —<br>lisible seulement de l'intérieur</p>
+      <p class="nc-subtext open" data-min="4" style="margin-top:0.5rem;">tant qu'elles restent traces,<br>une subjectivité qui ne compte pas encore</p>
+    </div>
+
+    <div class="bridge" id="bridge" data-min="4">
+      <span class="bridge-text">raconter pour faire · faire pour raconter</span>
+    </div>
+
+    <div class="nc recit">
+      <div class="nc-label">Récit — jours d'après</div>
+      <p class="nc-body" data-min="3" data-max="3">Ce que nous allons faire de ce qui a été vécu.</p>
+      <div class="posture-selector" data-min="4">
+        <button class="posture-btn active" data-posture="prealable">préalable</button>
+        <button class="posture-btn" data-posture="cote">pas de côté</button>
+        <button class="posture-btn" data-posture="bilan">bilan</button>
+      </div>
+      <textarea id="recitText" data-min="4" rows="4"></textarea>
+      <p class="nc-urgent" data-min="4">ne pas laisser ce récit aux mains<br>de ceux qui ont accès aux médiums de diffusion</p>
+    </div>
+  </div>
+
+  <hr class="sep" data-min="5" />
+  <p class="verstohlen" data-min="5">« ...Il s'agit dès lors d'inventer une technique de la furtivité – d'où cette charte tient sa désignation, le Verstohlen –, c'est-à-dire de maintien au monde en y consolidant nos pouvoirs d'agir et nos libertés. » — Cynthia Fleury &amp; Antoine Fenoglio, <a href="https://tracts.gallimard.fr/products/ce-qui-ne-peut-etre-vole-charte-du-verstohlen" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">Charte du Verstohlen</a></p>
+
+  <div class="question-finale" data-min="5">
+    <p class="qf-label">la question que cet artefact fait éprouver</p>
+    <p>Comment des collectifs ordinaires peuvent-ils conserver une souveraineté narrative suffisante pour que leurs expériences deviennent transmissibles, discutables et réutilisables sans être capturées par des appareils extérieurs de qualification ?</p>
+  </div>
+
+</div>
+
+<script>
+// ── VERSION ──
+function setVersion(v) {
+  document.querySelectorAll('.step-btn').forEach(btn =>
+    btn.classList.toggle('active', parseInt(btn.dataset.v) === v));
+
+  document.querySelector('.v0-bar').style.display = v === 0 ? 'flex' : 'none';
+
+  document.querySelectorAll('[data-min], [data-max]').forEach(el => {
+    const min = el.dataset.min !== undefined ? parseInt(el.dataset.min) : 0;
+    const max = el.dataset.max !== undefined ? parseInt(el.dataset.max) : 99;
+    el.style.display = (v >= min && v <= max) ? '' : 'none';
+  });
+
+  const narrative = document.getElementById('narrative');
+  if (narrative) narrative.classList.toggle('bridged', v >= 4);
+}
+
+document.querySelectorAll('.step-btn').forEach(btn =>
+  btn.addEventListener('click', () => setVersion(parseInt(btn.dataset.v))));
+
+// ── POSTURE ──
+const postures = {
+  prealable: 'Ce que nous voulons faire advenir…',
+  cote:      'Ce que cette expérience est en train de nous apprendre…',
+  bilan:     'Ce que nous laissons à ceux qui viennent après…'
+};
+
+const recitText = document.getElementById('recitText');
+recitText.placeholder = postures.prealable;
+
+document.querySelectorAll('.posture-btn').forEach(btn =>
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.posture-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    recitText.placeholder = postures[btn.dataset.posture];
+  }));
+
+// ── CANVAS ──
+const slider    = document.getElementById('slider');
+const canvas    = document.getElementById('canvas');
+const ctx       = canvas.getContext('2d');
+const pivotLine = document.getElementById('pivotLine');
+const pivotDot  = document.getElementById('pivotDot');
+const nowFloat  = document.getElementById('nowFloat');
+
+const COLS = 90, ROWS = 16;
+const dots = [];
+for (let row = 0; row < ROWS; row++)
+  for (let col = 0; col < COLS; col++)
+    dots.push({
+      col, row,
+      jx: (Math.random() - 0.5) * 0.4,
+      jy: (Math.random() - 0.5) * 0.4,
+      r:  1.1 + Math.random() * 0.9,
+      presence: Math.random() > 0.08 ? 1 : 0
+    });
+
+function draw(ratio) {
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.clientWidth, H = canvas.clientHeight;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  ctx.scale(dpr, dpr);
+  const cellW = W / COLS, cellH = H / ROWS;
+  const pivotCol = ratio * COLS;
+  ctx.clearRect(0, 0, W, H);
+
+  for (const d of dots) {
+    if (!d.presence) continue;
+    const cx = (d.col + 0.5 + d.jx) * cellW;
+    const cy = (d.row + 0.5 + d.jy) * cellH;
+    const dist = d.col - pivotCol;
+    if (dist < 0) {
+      const recency = Math.min(1, -dist / (COLS * 0.6));
+      ctx.fillStyle = `rgba(92,77,58,${0.12 + (1 - recency) * 0.72})`;
+      ctx.beginPath();
+      ctx.arc(cx, cy, d.r * (0.8 + (1 - recency) * 0.3), 0, Math.PI * 2);
+      ctx.fill();
+    } else {
+      const openness = Math.min(1, dist / (COLS * 0.5));
+      ctx.strokeStyle = `rgba(176,160,144,${Math.max(0.06, 0.45 - openness * 0.38)})`;
+      ctx.lineWidth = 0.8;
+      ctx.beginPath();
+      ctx.arc(cx, cy, d.r * 1.1, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+  }
+  const gx = ratio * W;
+  const g = ctx.createLinearGradient(gx - 40, 0, gx + 40, 0);
+  g.addColorStop(0,    'rgba(253,250,243,0)');
+  g.addColorStop(0.45, 'rgba(253,250,243,0.18)');
+  g.addColorStop(0.55, 'rgba(253,250,243,0.18)');
+  g.addColorStop(1,    'rgba(253,250,243,0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
+}
+
+function update() {
+  const ratio = Number(slider.value) / 100;
+  const px = ratio * canvas.clientWidth;
+  pivotLine.style.left = (px - 1) + 'px';
+  pivotDot.style.left  = px + 'px';
+  nowFloat.style.left  = px + 'px';
+  draw(ratio);
+}
+
+slider.addEventListener('input', update);
+
+let dragging = false;
+const stripWrap = document.getElementById('stripWrap');
+stripWrap.addEventListener('mousedown', e => { dragging = true; seek(e); });
+stripWrap.addEventListener('touchstart', e => { dragging = true; seek(e.touches[0]); }, { passive: true });
+document.addEventListener('mousemove',  e => { if (dragging) seek(e); });
+document.addEventListener('touchmove',  e => { if (dragging) seek(e.touches[0]); }, { passive: true });
+document.addEventListener('mouseup',    () => { dragging = false; });
+document.addEventListener('touchend',   () => { dragging = false; });
+
+function seek(e) {
+  const rect = stripWrap.getBoundingClientRect();
+  slider.value = Math.round(Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * 96 + 2);
+  update();
+}
+
+window.addEventListener('resize', update);
+window.addEventListener('load', () => { setVersion(0); update(); });
+</script>
+</body>
+</html>

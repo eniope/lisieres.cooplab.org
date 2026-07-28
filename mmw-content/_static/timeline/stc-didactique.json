@@ -1,0 +1,118 @@
+{
+  "title": {
+    "text": {
+      "headline": "Parcours transactionnel (version didactique)",
+      "text": "Frise schématique : la carte n’est pas le territoire. Cette frise déroule progressivement le cadre STC afin d’en faciliter l’appropriation intellectuelle avant son usage dans l’espace vécu."
+    }
+  },
+  "events": [
+
+    {
+      "start_date": { "year": "2026", "month": "1", "day": "1" },
+      "end_date": { "year": "2026", "month": "12", "day": "31" },
+      "text": {
+        "headline": "Contexte transactionnel",
+        "text": "Conditions de possibilité : milieu humain et technique, identités, compétences, patrimoine, capital."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "2", "day": "1" },
+      "end_date": { "year": "2026", "month": "2", "day": "28" },
+      "text": {
+        "headline": "Situation transactionnelle",
+        "text": "Entrée en situation : déclencheur, problématisation, cadrage initial."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "3", "day": "1" },
+      "end_date": { "year": "2026", "month": "3", "day": "31" },
+      "text": {
+        "headline": "Engagement",
+        "text": "Alignement des actants, promesses, contrats. Régime conversationnel engageant."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "4", "day": "1" },
+      "end_date": { "year": "2026", "month": "4", "day": "30" },
+      "text": {
+        "headline": "Capacitation",
+        "text": "Montée en pouvoir d’agir : apprentissages, outillage. Régime conversationnel capacitant."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "5", "day": "1" },
+      "end_date": { "year": "2026", "month": "6", "day": "30" },
+      "text": {
+        "headline": "Performance",
+        "text": "Production effective : faire / être / œuvre / milieu. Régime conversationnel performatif."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "7", "day": "1" },
+      "end_date": { "year": "2026", "month": "7", "day": "31" },
+      "text": {
+        "headline": "Évaluation",
+        "text": "Mesures, conventions, arbitrages. Régime conversationnel évaluatif."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "8", "day": "1" },
+      "end_date": { "year": "2026", "month": "8", "day": "31" },
+      "text": {
+        "headline": "Rétribution / Stabilisation",
+        "text": "Répartition, reconnaissance, célébration. Régime conversationnel rétributif."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "3", "day": "1" },
+      "end_date": { "year": "2026", "month": "8", "day": "31" },
+      "text": {
+        "headline": "Self individuel et collectif",
+        "text": "Individuation en situation et agencement collectif. Le self se transforme dans et par la transaction."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "3", "day": "1" },
+      "end_date": { "year": "2026", "month": "6", "day": "30" },
+      "text": {
+        "headline": "Part réalisatrice dominante",
+        "text": "Porter l’action, organiser, produire."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "5", "day": "1" },
+      "end_date": { "year": "2026", "month": "8", "day": "31" },
+      "text": {
+        "headline": "Part bénéficiaire explicite",
+        "text": "Recevoir, juger, transformer l’expérience en apprentissages."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "5", "day": "1" },
+      "text": {
+        "headline": "Bascule didactique",
+        "text": "Réaliser et bénéficier coexistent souvent dans un même self."
+      }
+    },
+
+    {
+      "start_date": { "year": "2026", "month": "5", "day": "1" },
+      "end_date": { "year": "2026", "month": "12", "day": "31" },
+      "text": {
+        "headline": "Transformations",
+        "text": "Transformation des selfs, des artefacts et du milieu."
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vers une infrastructure civique légère d'observation territoriale partagée</title>
+<link rel="canonical" href="https://utopia.cooplab.org/artefacts/outils/gogocarto-notice/gogocarto-notice.html">
+<meta name="description" content="Notice d'accompagnement de cooplab.gogocarto.fr : une démarche d'observation territoriale partagée depuis la lisière Sud Berry / Creuse. Références : Guattari, Ingold, Dewey, Moine, ORIV, Roux, Star &amp; Griesemer.">
+<meta name="author" content="Stéphane Caillaud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vers une infrastructure civique légère d'observation territoriale partagée">
+<meta property="og:description" content="Notice d'accompagnement de cooplab.gogocarto.fr : une démarche d'observation territoriale partagée depuis la lisière Sud Berry / Creuse.">
+<meta property="og:url" content="https://utopia.cooplab.org/artefacts/outils/gogocarto-notice/gogocarto-notice.html">
+<meta property="og:site_name" content="utopia.cooplab.org">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vers une infrastructure civique légère d'observation territoriale partagée">
+<meta name="twitter:description" content="Notice d'accompagnement de cooplab.gogocarto.fr : observation territoriale partagée, lisière Sud Berry / Creuse.">
+<style>
+  :root {
+    --bleu: #1A5F7A;
+    --bleu-fond: #EBF4F8;
+    --vert: #3D6B5B;
+    --vert-fond: #E6F0EC;
+    --ocre: #A0622A;
+    --ocre-fond: #F5EBE0;
+    --gris: #4A5568;
+    --gris-clair: #F7F8FA;
+    --bord: #DDE2E8;
+    --texte: #1C2B3A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Georgia', serif;
+    color: var(--texte);
+    background: #fff;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ─── En-tête ─── */
+  header {
+    background: var(--bleu);
+    color: #fff;
+    padding: 56px 0 44px;
+    text-align: center;
+  }
+
+  header .surtitre {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .65;
+    margin-bottom: 14px;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    opacity: .85;
+    display: block;
+    font-size: 1.05rem;
+    margin-top: 6px;
+  }
+
+  header .domaine {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    opacity: .55;
+    margin-top: 18px;
+  }
+
+  /* ─── Sommaire ─── */
+  nav.sommaire {
+    background: var(--gris-clair);
+    border-bottom: 1px solid var(--bord);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  nav.sommaire ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    list-style: none;
+    padding: 0 24px;
+  }
+
+  nav.sommaire a {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    color: var(--gris);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+
+  nav.sommaire a:hover { color: var(--bleu); border-bottom-color: var(--bleu); }
+
+  /* ─── Contenu ─── */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+
+  /* ─── Section ─── */
+  section {
+    padding: 52px 0 12px;
+    border-bottom: 1px solid var(--bord);
+  }
+
+  section:last-child { border-bottom: none; }
+
+  .section-num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--bleu);
+    margin-bottom: 8px;
+    opacity: .7;
+  }
+
+  section h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--texte);
+    margin-bottom: 22px;
+    line-height: 1.3;
+  }
+
+  p { margin-bottom: 16px; }
+
+  /* ─── Citation ─── */
+  blockquote {
+    border-left: 3px solid var(--bleu);
+    margin: 24px 0;
+    padding: 14px 20px;
+    background: var(--bleu-fond);
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #1a3a4a;
+  }
+
+  blockquote p { margin: 0; }
+
+  /* ─── Encadré coloré ─── */
+  .encadre {
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .encadre.bleu  { background: var(--bleu-fond); border: 1px solid #b0d4e4; }
+  .encadre.vert  { background: var(--vert-fond); border: 1px solid #aac8b8; }
+  .encadre.ocre  { background: var(--ocre-fond); border: 1px solid #d4aa88; }
+
+  .encadre .titre-encadre {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .encadre.bleu .titre-encadre { color: var(--bleu); }
+  .encadre.vert .titre-encadre { color: var(--vert); }
+  .encadre.ocre .titre-encadre { color: var(--ocre); }
+
+  /* ─── Présences ─── */
+  .presences {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .presence-card {
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--bord);
+  }
+
+  .presence-card.verte { background: var(--vert-fond); border-color: #aac8b8; }
+  .presence-card.bleue { background: var(--bleu-fond); border-color: #b0d4e4; }
+
+  .presence-card .pastille {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .presence-card h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: .85rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .presence-card.verte h3 { color: var(--vert); }
+  .presence-card.bleue h3 { color: var(--bleu); }
+
+  .presence-card p { font-size: .92rem; margin: 0; color: var(--gris); }
+
+  /* ─── Outils ─── */
+  .outils-schema {
+    display: flex;
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--bord);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .outil-col {
+    flex: 1;
+    padding: 20px 22px;
+  }
+
+  .outil-col:first-child { border-right: 1px solid var(--bord); background: var(--vert-fond); }
+  .outil-col:last-child  { background: var(--bleu-fond); }
+
+  .outil-col .nom {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: .95rem;
+    margin-bottom: 6px;
+  }
+  .outil-col:first-child .nom { color: var(--vert); }
+  .outil-col:last-child  .nom { color: var(--bleu); }
+
+  .outil-col .question {
+    font-size: .85rem;
+    font-style: italic;
+    color: var(--gris);
+    margin-bottom: 12px;
+  }
+
+  .outil-col ul {
+    padding-left: 16px;
+    font-size: .88rem;
+    color: var(--texte);
+  }
+
+  .outil-col li { margin-bottom: 4px; }
+
+  /* ─── Lignes ─── */
+  .lignes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .ligne-tag {
+    background: var(--gris-clair);
+    border: 1px solid var(--bord);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: .82rem;
+    color: var(--gris);
+  }
+
+  /* ─── Hypothèse finale ─── */
+  .hypothese {
+    background: var(--bleu);
+    color: #e8f4fa;
+    border-radius: 10px;
+    padding: 32px 36px;
+    margin: 32px 0;
+    text-align: center;
+  }
+
+  .hypothese .label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    opacity: .6;
+    margin-bottom: 14px;
+  }
+
+  .hypothese p {
+    font-size: 1.08rem;
+    font-style: italic;
+    margin: 0 0 18px;
+    opacity: .95;
+  }
+
+  .hypothese ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hypothese li {
+    background: rgba(255,255,255,.12);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: .82rem;
+    margin: 0;
+  }
+
+  /* ─── Trois régimes ─── */
+  .regimes {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .regime-card {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px;
+    border: 1px solid var(--bord);
+    background: var(--gris-clair);
+    position: relative;
+  }
+  .regime-card .num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--texte-sec);
+    margin-bottom: 6px;
+  }
+  .regime-card h4 {
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--bleu);
+    margin: 0 0 8px;
+    font-style: normal;
+  }
+  .regime-card p { font-size: .85rem; color: var(--gris); margin: 0; }
+  .regime-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: .75rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bleu);
+    color: #fff;
+    font-weight: 600;
+  }
+  .regime-card:nth-child(2) h4 { color: var(--vert); }
+  .regime-card:nth-child(2) .tag { background: var(--vert); }
+  .regime-card:nth-child(3) h4 { color: var(--ocre); }
+  .regime-card:nth-child(3) .tag { background: var(--ocre); }
+
+  /* ─── Auteur ─── */
+  .auteur {
+    background: var(--gris-clair);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 32px 0 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: .85rem;
+    color: var(--gris);
+    border: 1px solid var(--bord);
+  }
+
+  /* ─── Pied de page ─── */
+  footer {
+    background: var(--texte);
+    color: rgba(255,255,255,.45);
+    text-align: center;
+    padding: 28px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+  }
+
+  /* ─── Références ─── */
+  .ref {
+    font-style: italic;
+    font-size: .88rem;
+    color: var(--gris);
+    border-top: 1px solid var(--bord);
+    padding-top: 8px;
+    margin-top: 16px;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.4rem; }
+    nav.sommaire { display: none; }
+    .presences, .outils-schema { grid-template-columns: 1fr; display: block; }
+    .regimes { flex-direction: column; }
+    .outils-schema { display: flex; flex-direction: column; }
+    .outil-col:first-child { border-right: none; border-bottom: 1px solid var(--bord); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── En-tête ─── -->
+<header>
+  <div class="surtitre">Lisière Sud Berry / Creuse · Expérimentation 2026</div>
+  <h1>
+    Vers une infrastructure civique légère<br>d'observation territoriale partagée
+    <em>cooplab.gogocarto.fr · Lisière Sud Berry / Creuse</em>
+  </h1>
+  <div class="domaine"><a href="https://cooplab.gogocarto.fr" target="_blank" rel="noopener" style="color:inherit; opacity:.55; text-decoration:none;">cooplab.gogocarto.fr</a></div>
+</header>
+
+<!-- ─── Sommaire ─── -->
+<nav class="sommaire">
+  <ul>
+    <li><a href="#place">La place du marché · La Châtre</a></li>
+    <li><a href="#pourquoi">Pourquoi cette carte ?</a></li>
+    <li><a href="#moleculaire">Dimensions moléculaires</a></li>
+    <li><a href="#lignes">Points et lignes</a></li>
+    <li><a href="#presences">Deux formes de présence</a></li>
+    <li><a href="#public">Communauté de concernement</a></li>
+    <li><a href="#moine">Représentation territoriale</a></li>
+    <li><a href="#oriv">Démarche ORIV</a></li>
+    <li><a href="#roux">Récit de l'expérience · Roux</a></li>
+    <li><a href="#frontiere">Infrastructure entre mondes</a></li>
+    <li><a href="#outils">Écologie d'outils</a></li>
+    <li><a href="#hypothese">Hypothèse de travail</a></li>
+  </ul>
+</nav>
+
+<!-- ─── Contenu ─── -->
+<main>
+
+<!-- 1. Scène d'ouverture : place du marché -->
+<section id="place">
+  <div class="section-num">01 · Scène d'ouverture</div>
+  <h2>Un samedi matin à La Châtre</h2>
+
+  <p>Sur la place du marché, entre deux étals, des conversations. Quelqu'un apprend que des voisins projettent une initiative dans leur hameau. Une autre signale qu'il y a une réunion jeudi soir. Un troisième demande des nouvelles d'une personne qu'il n'a pas vue depuis quelques semaines.</p>
+
+  <p>Des nouvelles, des invitations, des questions, des récits de ce qui se passe : tout cela circule, informellement, entre des gens qui se connaissent ou qui se reconnaissent. Sans inscription, sans agenda, sans compte rendu.</p>
+
+  <div class="encadre ocre">
+    <div class="titre-encadre">Ce qui circule</div>
+    <p style="font-size:.92rem; margin:0;">Qui fait quoi, qui est là, qui a du mal, qui cherche quelque chose, qui pourrait aider. Des initiatives qui émergent, des préoccupations qui se nomment, des énergies qui se repèrent. Une intelligence du territoire produite collectivement, en marchant, en s'arrêtant, en se croisant.</p>
+  </div>
+
+  <p>C'est depuis ces observations, réalisées au premier semestre 2026, que le projet a pris forme. La question : <strong>comment rendre visible, documenter, transmettre ce qui circule déjà ?</strong></p>
+
+  <p>La carte ne cherche pas à remplacer ces conversations. Elle cherche à en prolonger la portée.</p>
+</section>
+
+<!-- 2. Pourquoi cette carte -->
+<section id="pourquoi">
+  <div class="section-num">02 · Intention</div>
+  <h2>Pourquoi cette carte ?</h2>
+
+  <p>Cette carte est une expérimentation visant à rendre visibles les liens qui relient des personnes engagées dans leurs vies quotidiennes et sociales autour de la lisière Sud Berry / Creuse.</p>
+
+  <blockquote><p>Il existe déjà un ensemble de personnes qui, depuis leurs lieux de vie, entretiennent des relations d'attention, de conversation, de compagnonnage et de co-apprentissage autour de préoccupations communes liées à l'avenir de leurs territoires.</p></blockquote>
+
+  <p>Ces relations participent déjà à la circulation d'expériences, de questions, de récits, de ressources et de possibilités d'action.</p>
+
+  <p>La carte cherche à rendre visible cette <strong>écologie relationnelle</strong> avant même qu'elle ne se reconnaisse pleinement comme telle.</p>
+</section>
+
+<!-- 3. Moléculaire -->
+<section id="moleculaire">
+  <div class="section-num">03 · Fondement théorique · Guattari</div>
+  <h2>Les dimensions moléculaires de la vie collective</h2>
+
+  <p>Le choix de représenter des personnes avant de représenter des organisations ou des dispositifs s'inspire notamment des travaux de Félix Guattari.</p>
+
+  <p>Dans sa réflexion sur les <em>trois écologies</em>, Guattari rappelle qu'aucune transformation écologique, sociale ou politique ne peut être pensée sans prendre en compte les dimensions moléculaires de la vie collective.</p>
+
+  <div class="encadre bleu">
+    <div class="titre-encadre">Ce que cela recouvre</div>
+    <div class="lignes">
+      <span class="ligne-tag">les sensibilités</span>
+      <span class="ligne-tag">les désirs</span>
+      <span class="ligne-tag">les attachements</span>
+      <span class="ligne-tag">les manières d'habiter le monde</span>
+      <span class="ligne-tag">les formes ordinaires de relation</span>
+    </div>
+  </div>
+
+  <blockquote><p>Il n'existe pas de transformation collective sans transformations situées portées par des personnes concrètes.</p></blockquote>
+
+  <p>La carte propose ainsi de rendre visibles ce que l'on pourrait appeler des <strong>points nodaux d'intelligence, de sensibilité et de désir</strong>. Chaque point représente une personne engagée dans une vie quotidienne et sociale singulière : un lieu potentiel d'attention, de conversation, d'apprentissage, d'initiative, de mise en relation.</p>
+
+  <p class="ref"><a href="https://www.editionsdeleclat.com/livres/les-trois-ecologies/" target="_blank" rel="noopener">Félix Guattari, <em>Les trois écologies</em></a>, Éditions Galilée, 1989</p>
+</section>
+
+<!-- 4. Points et lignes -->
+<section id="lignes">
+  <div class="section-num">04 · Fondement théorique · Ingold</div>
+  <h2>Points, lignes et présences reliées</h2>
+
+  <p>Ces points ne doivent pas être compris comme des unités isolées auxquelles viendraient ensuite s'ajouter des relations. En écho aux travaux de Tim Ingold, ils peuvent être compris comme des <strong>nœuds provisoires</strong> au sein de trajectoires, de conversations, d'apprentissages et d'attachements qui les précèdent et les dépassent.</p>
+
+  <p>Les personnes n'habitent pas le monde comme des objets disposés dans l'espace. Elles habitent le monde en traçant des lignes.</p>
+
+  <div class="encadre vert">
+    <div class="titre-encadre">Les lignes que tracent les personnes</div>
+    <div class="lignes">
+      <span class="ligne-tag">lignes de vie</span>
+      <span class="ligne-tag">lignes de relation</span>
+      <span class="ligne-tag">lignes d'attention</span>
+      <span class="ligne-tag">lignes d'apprentissage</span>
+      <span class="ligne-tag">lignes de compagnonnage</span>
+    </div>
+  </div>
+
+  <p>La carte fige momentanément certains de ces nœuds afin de rendre visible un tramage plus vaste de relations en mouvement. Elle ne prétend donc pas représenter des individus immobiles dans un territoire, mais donner à voir une écologie relationnelle faite de présences reliées, de trajectoires partagées et de conversations en cours.</p>
+
+  <p class="ref"><a href="https://www.routledge.com/Lines-A-Brief-History/Ingold/p/book/9780415500180" target="_blank" rel="noopener">Tim Ingold, <em>Lines: A Brief History</em></a>, Routledge, 2007</p>
+</section>
+
+<!-- 5. Deux formes de présence -->
+<section id="presences">
+  <div class="section-num">05 · Dispositif</div>
+  <h2>Deux formes de présence</h2>
+
+  <div class="presences">
+    <div class="presence-card verte">
+      <div class="pastille">🟢</div>
+      <h3>Relié·e·s depuis la lisière</h3>
+      <p>Personnes dont la vie quotidienne se déploie dans la lisière Sud Berry / Creuse. Double proximité : géographique (ancrage commun) et organisée (conversations, coopérations, apprentissages partagés).</p>
+    </div>
+    <div class="presence-card bleue">
+      <div class="pastille">🔵</div>
+      <h3>Relié·e·s depuis ailleurs</h3>
+      <p>Personnes situées hors du périmètre géographique mais entretenant des relations régulières avec des personnes, des initiatives ou des préoccupations ancrées dans la lisière. Proximité principalement organisée.</p>
+    </div>
+  </div>
+
+  <p>La distinction ne renvoie pas à une opposition entre un dedans et un dehors, mais à différentes <strong>formes de proximité</strong> participant à la constitution d'un même espace relationnel.</p>
+</section>
+
+<!-- 6. Communauté de concernement -->
+<section id="public">
+  <div class="section-num">06 · Fondement théorique · Dewey</div>
+  <h2>Une communauté de concernement</h2>
+
+  <p>Ce qui se passe sur la place du marché de La Châtre (les préoccupations qui se nomment, les initiatives qui se repèrent, les personnes qui se reconnaissent comme concernées par les mêmes enjeux) correspond à ce que John Dewey appelait l'émergence d'un public.</p>
+
+  <blockquote><p>Un public émerge lorsqu'un ensemble de personnes se découvre affecté par les conséquences indirectes d'une même situation.</p></blockquote>
+
+  <p>Le dispositif cherche à rendre perceptible une <strong>communauté de concernement</strong> avant même qu'elle ne se reconnaisse pleinement comme telle.</p>
+
+  <p class="ref"><a href="https://fr.wikipedia.org/wiki/Le_Public_et_ses_probl%C3%A8mes" target="_blank" rel="noopener">John Dewey, <em>Le public et ses problèmes</em></a>, 1927</p>
+</section>
+
+<!-- 7. Moine -->
+<section id="moine">
+  <div class="section-num">07 · Fondement théorique · Moine</div>
+  <h2>Une infrastructure de représentation territoriale</h2>
+
+  <p>Dans les travaux d'Alexandre Moine, le territoire résulte d'interactions permanentes entre des acteurs situés, un espace géographique, et des représentations, perceptions et interprétations de la situation. Les acteurs agissent selon deux registres complémentaires : <strong>agir sur le territoire</strong> (utiliser, aménager, gérer) et <strong>comprendre le territoire</strong> (percevoir, observer, se représenter).</p>
+
+  <p>La capacité d'action collective dépend en partie de la qualité des représentations que les acteurs sont capables de produire de leur propre situation. Dans cette perspective, la carte participe à la boucle :</p>
+
+  <blockquote><p>percevoir → observer → se représenter → agir → réévaluer → ajuster.</p></blockquote>
+
+  <p>Elle cherche à renforcer la capacité des personnes concernées à percevoir les relations qui les relient, à reconnaître des dynamiques déjà présentes, à identifier des proximités et des ressources partagées, à produire progressivement une représentation collective de leur situation.</p>
+
+  <p class="ref"><a href="https://doi.org/10.3917/eg.352.0115" target="_blank" rel="noopener">Alexandre Moine, <em>Le territoire comme un système complexe : un concept opératoire pour l'aménagement et la géographie</em></a>, L'Espace géographique, 2006/2, ThéMA, Besançon</p>
+</section>
+
+<!-- 8. ORIV -->
+<section id="oriv">
+  <div class="section-num">08 · Fondement méthodologique · ORIV</div>
+  <h2>Le projet comme démarche d'observation territoriale partagée</h2>
+
+  <p style="font-size:.85rem; color:var(--texte-sec); font-style:italic; margin-bottom:16px;">Source : guide méthodologique ORIV (Observatoire Régional de l'Intégration et de la Ville), novembre 2021</p>
+
+  <p>Guattari répond à la question <em>pourquoi commencer par les personnes</em>. Ingold à <em>pourquoi les relations comptent autant que les points</em>. Dewey à <em>comment apparaît un public</em>. Moine à <em>comment représentation et action s'articulent dans un système territorial</em>. L'ORIV répond à la question qui restait ouverte : <strong>comment fait-on concrètement pour observer ensemble un territoire ?</strong></p>
+
+  <p>C'est la pièce méthodologique qui transforme l'intuition en démarche explicite.</p>
+
+  <div class="citation">
+    L'outil doit être au service du projet et non l'outil qui crée le projet.
+    <div class="source">ORIV, guide méthodologique de l'observation territoriale</div>
+  </div>
+
+  <p>Cette GogoCarto ne devient donc plus une carte des acteurs, un annuaire, un réseau. Elle devient l'une des composantes d'un dispositif léger d'observation territoriale partagée : permettre à un territoire de développer progressivement une intelligence de sa propre situation.</p>
+
+  <div class="encadre vert">
+    <div class="titre-encadre">Les quatre registres de l'observation (ORIV)</div>
+    <div class="lignes">
+      <span class="ligne-tag">outil de connaissance</span>
+      <span class="ligne-tag">outil de prévention</span>
+      <span class="ligne-tag">outil d'animation territoriale</span>
+      <span class="ligne-tag">outil d'aide à la décision</span>
+    </div>
+    <p style="font-size:.88rem; margin-top:12px; margin-bottom:0;">GogoCarto se situe principalement dans les deux registres intermédiaires : animation territoriale et construction d'une capacité collective à voir.</p>
+  </div>
+
+  <h4>L'importance des perceptions</h4>
+
+  <div class="citation">
+    Les perceptions, ressentis et interprétations sont aussi importants que les faits eux-mêmes.
+    <div class="source">ORIV</div>
+  </div>
+
+  <p>Cette phrase justifie directement la question d'entrée dans GogoCarto : <strong><em>« En quoi vous sentez-vous relié·e à la lisière Sud Berry / Creuse ? »</em></strong></p>
+  <p>Ce n'est pas un supplément poétique. C'est une donnée d'observation territoriale parfaitement légitime.</p>
+
+  <h4>Finalité opératoire</h4>
+
+  <div class="encadre bleu">
+    <div class="titre-encadre">Ce vers quoi tend le dispositif</div>
+    <p style="font-size:.95rem; margin:0; font-style:italic;">Augmenter la capacité des habitants à percevoir, comprendre et agir sur leur situation commune.</p>
+  </div>
+
+  <p class="ref"><a href="https://www.oriv.org/wp-content/uploads/2021/11/oriv_guide_methodologique_observation_nov_2021.pdf" target="_blank" rel="noopener">ORIV, <em>Observer les territoires. Guide méthodologique pour des approches partagées</em></a>, novembre 2021 (PDF)</p>
+</section>
+
+<!-- 9. Benjamin Roux -->
+<section id="roux">
+  <div class="section-num">09 · Composante narrative · Benjamin Roux</div>
+  <h2>Comment faire récit de nos expériences collectives</h2>
+
+  <p>Benjamin Roux distingue trois régimes dans la production d'un récit d'expérience collective. Ils coexistent et s'alimentent mutuellement. Lu à travers ce cadre, le dispositif GogoCarto occupe une place précise dans une chaîne narrative plus longue.</p>
+
+  <blockquote>
+    <p>Raconter pour faire et faire pour raconter.</p>
+    <p style="font-size:.88rem; opacity:.75; font-style:normal; margin-top:8px;">L'adresse compte autant que le contenu. Qui raconte ? À qui ? Depuis quelle place ?</p>
+  </blockquote>
+
+  <div class="regimes">
+    <div class="regime-card">
+      <div class="num">Régime 1</div>
+      <h4>Les traces</h4>
+      <p>On vit, on collecte, on laisse des marques. Matière brute : présence, corps dans le lieu. Ce n'est pas encore du récit, et ce n'est pas grave.</p>
+      <span class="tag">GogoCarto</span>
+    </div>
+    <div class="regime-card">
+      <div class="num">Régime 2</div>
+      <h4>Le récit intermédiaire</h4>
+      <p>Le "pas de côté" : on met en commun avec d'autres ce qu'on a vécu localement. La trace devient adressée. L'intériorité devient partageable.</p>
+      <span class="tag">Rencontres · Kumu</span>
+    </div>
+    <div class="regime-card">
+      <div class="num">Régime 3</div>
+      <h4>Le récit final</h4>
+      <p>Celui qui "laisse une histoire à raconter aux autres". Il s'inscrit dans une généalogie et peut vivre sans son auteur.</p>
+      <span class="tag">Notice · Quartz · Thèse</span>
+    </div>
+  </div>
+
+  <h4>Ce que ce cadre éclaire dans le dispositif</h4>
+
+  <p>Chaque point sur GogoCarto est une <strong>trace</strong> au sens de Roux : une présence rendue visible, un ancrage déposé. La question d'entrée <em>« En quoi vous sentez-vous relié·e à la lisière ? »</em> est une invitation précise au <strong>récit intermédiaire</strong> : rendre adressé ce qui était intérieur. Et la présente notice est elle-même un <strong>récit final</strong> : elle peut vivre sans son auteur.</p>
+
+  <p>La distinction 🟢 Relié·e·s depuis la lisière / 🔵 Relié·e·s depuis ailleurs répond exactement à la question centrale de Roux : qui parle, à qui, depuis quelle place ? L'adresse est déjà inscrite dans l'architecture du dispositif.</p>
+
+  <div class="encadre bleu">
+    <div class="titre-encadre">Ce que Roux ajoute aux cinq autres références</div>
+    <p style="font-size:.92rem; margin:0;">Guattari, Ingold, Dewey, Moine et l'ORIV répondent aux questions du pourquoi et du comment observer. Roux répond à la question qu'ils n'adressent pas directement : <strong>comment ce qui est observé peut-il devenir un récit qui transforme ?</strong> GogoCarto seul ne produit pas de récit final. Il faut l'enchaînement complet des trois régimes pour que les traces deviennent transmissibles.</p>
+  </div>
+
+  <p class="ref">
+    <a href="https://lecoleduterrain.fr/maniere-de-faire/comment-faire-recit-de-nos-experiences-collectives/" target="_blank" rel="noopener">Benjamin Roux, <em>Comment faire récit de nos expériences collectives</em></a>, L'école du terrain
+    · <a href="https://www.editionsducommun.org/products/l-art-de-conter-nos-experiences-collectives-benjamin-roux" target="_blank" rel="noopener"><em>L'art de conter nos expériences collectives</em></a>, Éditions du Commun, 2018
+  </p>
+</section>
+
+<!-- 10. Infrastructure entre mondes · Star & Griesemer -->
+<section id="frontiere">
+  <div class="section-num">10 · Lecture transversale · Star &amp; Griesemer</div>
+  <h2>Une infrastructure légère entre plusieurs mondes</h2>
+
+  <p>Guattari répond à <em>pourquoi les personnes</em>. Ingold à <em>pourquoi les relations comptent autant que les points</em>. Dewey à <em>comment apparaît un public</em>. Moine à <em>comment représentation et action s'articulent</em>. ORIV à <em>comment observer ensemble</em>. Roux à <em>comment faire récit</em>.</p>
+
+  <p>Reste une question que ces références laissent ouverte : <strong>pourquoi des acteurs aux logiques très différentes peuvent-ils utiliser le même dispositif sans que l'un doive convaincre l'autre ?</strong></p>
+
+  <div class="encadre vert">
+    <div class="titre-encadre">L'objet-frontière (Star &amp; Griesemer, 1989)</div>
+    <p>Un objet-frontière est suffisamment <strong>plastique</strong> pour s'adapter aux besoins de plusieurs mondes sociaux différents, suffisamment <strong>robuste</strong> pour maintenir une identité commune à travers eux. Il rend possible la coopération sans consensus préalable sur les significations.</p>
+  </div>
+
+  <p>La carte <a href="https://cooplab.gogocarto.fr" target="_blank" rel="noopener">cooplab.gogocarto.fr</a> est un objet de ce type. Elle circule entre des mondes aux logiques différentes :</p>
+
+  <div class="regimes" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 1.6rem 0;">
+    <div class="regime">
+      <div class="label-regime">Habitant</div>
+      <p>Je me reconnais, je vois mes voisins, je me situe dans un réseau qui existait avant que je le nomme.</p>
+    </div>
+    <div class="regime">
+      <div class="label-regime">Association</div>
+      <p>Un annuaire vivant des compagnonnages, une carte des alliances potentielles sur le territoire.</p>
+    </div>
+    <div class="regime">
+      <div class="label-regime">Collectivité</div>
+      <p>Un diagnostic participatif produit depuis le terrain, une cartographie des initiatives et des énergies.</p>
+    </div>
+    <div class="regime">
+      <div class="label-regime">Chercheur</div>
+      <p>Des traces pour une observation territoriale partagée, un corpus de perceptions situées.</p>
+    </div>
+  </div>
+
+  <p>Même URL, même interface, lectures radicalement différentes. C'est précisément cette pluralité qui constitue la <strong>robustesse infra-structurelle</strong> du dispositif : il tient plusieurs logiques simultanément sans les fondre.</p>
+
+  <div class="blockquote">
+    <p>La question d'entrée (<em>En quoi vous sentez-vous relié·e à la lisière Sud Berry / Creuse ?</em>) est elle-même un objet-frontière : plastique (chacun répond depuis son ancrage propre), robuste (elle maintient l'unité du corpus), coordinatrice (elle rend commensurables des expériences singulières).</p>
+  </div>
+
+  <p class="ref">
+    <a href="https://doi.org/10.1177/030631289019003001" target="_blank" rel="noopener">Star, S. L. &amp; Griesemer, J. R. (1989), <em>Institutional Ecology, 'Translations' and Boundary Objects</em>, Social Studies of Science 19(3)</a>
+  </p>
+</section>
+
+<!-- 11. Écologie d'outils -->
+<section id="outils">
+  <div class="section-num">11 · Architecture</div>
+  <h2>Une écologie d'outils de représentation</h2>
+
+  <p>La carte <strong>cooplab.gogocarto.fr</strong> constitue un premier niveau de représentation. Elle répond principalement à la question : <em>Qui participe à cette dynamique territoriale et depuis quels lieux de vie ?</em></p>
+
+  <p>D'autres outils viennent compléter cette représentation.</p>
+
+  <div class="outils-schema">
+    <div class="outil-col">
+      <div class="nom">GogoCarto</div>
+      <div class="question">« Qui est là ? »</div>
+      <ul>
+        <li>Les présences</li>
+        <li>Les ancrages</li>
+        <li>Les proximités géographiques</li>
+        <li>Certaines proximités organisées</li>
+      </ul>
+    </div>
+    <div class="outil-col">
+      <div class="nom">Kumu</div>
+      <div class="question">« Qui est relié à qui ? »</div>
+      <ul>
+        <li>Les relations</li>
+        <li>Les conversations</li>
+        <li>Les compagnonnages</li>
+        <li>Les circulations de ressources</li>
+        <li>Les proximités organisées</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Là où GogoCarto rend principalement visibles les nœuds, Kumu permet progressivement de rendre visibles les lignes qui les relient. En ce sens, <strong>Kumu est le sociogramme vivant recommandé par l'ORIV</strong>, l'outil qui rend visibles les relations entre pilotes, bénéficiaires, partenaires et ressources.</p>
+
+  <div class="encadre bleu">
+    <div class="titre-encadre">Documentation cumulative (Obsidian / Quartz)</div>
+    <p style="font-size:.92rem; margin:0;">Ces espaces documentaires contribuent à conserver les récits, les apprentissages, les traces et les connaissances produites collectivement au fil du temps.</p>
+  </div>
+
+  <p>L'ambition n'est pas de produire une représentation exhaustive du territoire mais de contribuer à la capacité des habitants, collectifs, associations, professionnels, élus et chercheurs à développer une <strong>intelligence partagée de leur situation</strong> et des possibilités d'action qui en émergent.</p>
+</section>
+
+<!-- 12. Hypothèse -->
+<section id="hypothese">
+  <div class="section-num">12 · Hypothèse de travail</div>
+  <h2>Une communauté apprenante peut exister avant même de se nommer</h2>
+
+  <div class="hypothese">
+    <div class="label">Hypothèse explorée</div>
+    <p>Une communauté apprenante peut exister avant même de se nommer.<br>Encore faut-il disposer de dispositifs lui permettant :</p>
+    <ul>
+      <li>de se voir</li>
+      <li>de se reconnaître</li>
+      <li>de se raconter</li>
+      <li>de documenter les liens qui la constituent</li>
+      <li>d'apprendre de sa propre expérience</li>
+    </ul>
+  </div>
+
+  <p>C'est dans cette perspective que s'inscrit l'expérimentation cooplab.gogocarto.fr.</p>
+
+  <div class="auteur">
+    <strong>Stéphane Caillaud</strong>, habitant-chercheur automissionné, Boischaut Sud<br>
+    Expérimentation 2026 · Lisière Sud Berry / Creuse · Projet de PNR Sud Berry<br>
+    <span style="opacity:.6;">CC BY-SA · cooplab.org</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  cooplab.gogocarto.fr · Notice d'accompagnement · 2026 · CC BY-SA · Stéphane Caillaud
+</footer>
+
+</body>
+</html>

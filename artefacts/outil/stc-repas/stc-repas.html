@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STC — Artefact pédagogique (Zacklad 2020)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #faf8f4; color: #2c2c2c; padding: 24px 16px 48px; font-size: 14px; line-height: 1.5; max-width: 760px; margin: 0 auto; }
+
+  header { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid #ddd; }
+  header h1 { font-size: 18px; font-weight: bold; margin-bottom: 4px; }
+  header .subtitle { font-size: 12px; color: #888; font-style: italic; }
+  header .context { font-size: 11px; color: #aaa; margin-top: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .widget-title { font-size: 15px; font-weight: bold; text-align: center; margin-bottom: 4px; letter-spacing: 0.03em; }
+  .widget-subtitle { text-align: center; font-size: 11px; color: #888; margin-bottom: 14px; font-style: italic; }
+  .mode-toggle { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
+  .mode-btn { padding: 5px 14px; border-radius: 20px; border: 1.5px solid #bbb; background: transparent; cursor: pointer; font-size: 12px; color: #555; font-family: 'Georgia', serif; transition: all 0.2s; }
+  .mode-btn.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
+  .mode-label { text-align: center; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #aaa; margin-bottom: 12px; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; justify-content: center; }
+  .tab { padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; border: 1.5px solid transparent; background: #e8e4de; color: #555; transition: all 0.2s; }
+  .tab[data-tab="parcours"].active { background: #5b7fa6; color:#fff; }
+  .tab[data-tab="actants"].active { background: #7a9e6e; color:#fff; }
+  .tab[data-tab="artefacts"].active { background: #c28a3a; color:#fff; }
+  .tab[data-tab="performance"].active { background: #9a6e9a; color:#fff; }
+  .tab[data-tab="signes"].active { background: #b05a5a; color:#fff; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* PARCOURS */
+  .parcours-flow { display: flex; gap: 2px; margin-bottom: 10px; overflow-x: auto; }
+  .etape { flex: 1; min-width: 110px; padding: 10px 8px; border-radius: 6px; cursor: pointer; background: #e8e4de; transition: all 0.2s; }
+  .etape.active { background: #5b7fa6; color: white; }
+  .etape:not(.active):hover { background: #d8d4ce; }
+  .etape-label { font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; opacity: 0.6; }
+  .etape.active .etape-label { color: #cde; opacity: 0.85; }
+  .etape-title { font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+  .etape-body { font-size: 11px; font-style: italic; color: #666; line-height: 1.4; }
+  .etape.active .etape-body { color: #d0e4ff; }
+  .etape-extra { font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.2); color: #c0daf5; line-height: 1.4; display: none; }
+  .etape.active .etape-extra.visible { display: block; }
+  .tip { text-align: center; font-size: 10px; color: #aaa; margin-top: 8px; font-style: italic; }
+
+  /* ACTANTS */
+  .actants-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .actant-card { border-radius: 6px; padding: 10px 12px; border-left: 4px solid; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.06); cursor: pointer; transition: all 0.2s; }
+  .actant-card:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+  .actant-card[data-actant="commanditaire"] { border-color: #5b7fa6; }
+  .actant-card[data-actant="entrepreneur"] { border-color: #7a9e6e; }
+  .actant-card[data-actant="realisateur"] { border-color: #c28a3a; }
+  .actant-card[data-actant="beneficiaire"] { border-color: #9a6e9a; }
+  .actant-title { font-weight: bold; font-size: 12px; margin-bottom: 2px; }
+  .actant-verbe { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: #888; margin-bottom: 6px; }
+  .actant-body { font-size: 11px; font-style: italic; color: #666; line-height: 1.4; }
+  .actant-extra { font-size: 11px; color: #555; padding-top: 5px; margin-top: 5px; border-top: 1px solid #eee; line-height: 1.4; display: none; }
+  .actant-card.expanded .actant-extra { display: block; }
+  .info-box { background: #f0f4f8; border-radius: 6px; padding: 10px 12px; margin-top: 8px; font-size: 11px; color: #555; border-left: 3px solid #5b7fa6; line-height: 1.5; }
+
+  /* ARTEFACTS */
+  .artefact-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .artefact-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .artefact-content { flex: 1; }
+  .artefact-type { font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+  .artefact-body { font-size: 11px; color: #444; margin-bottom: 3px; font-style: italic; line-height: 1.4; }
+  .artefact-engageant .artefact-type { color: #5b7fa6; }
+  .artefact-engageant .artefact-icon { background: #dbe8f5; }
+  .artefact-capacitant .artefact-type { color: #7a9e6e; }
+  .artefact-capacitant .artefact-icon { background: #dcefd8; }
+  .artefact-porteur .artefact-type { color: #c28a3a; }
+  .artefact-porteur .artefact-icon { background: #f5e8d0; }
+  .artefact-bilan .artefact-type { color: #9a6e9a; }
+  .artefact-bilan .artefact-icon { background: #ecdcec; }
+
+  /* PERFORMANCE */
+  .perf-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .perf-card { border-radius: 6px; padding: 10px; text-align: center; cursor: pointer; }
+  .individuation { background: #dbe8f5; }
+  .creation { background: #f5e8d0; }
+  .territorialisation { background: #dcefd8; }
+  .perf-title { font-weight: bold; font-size: 12px; margin-bottom: 4px; }
+  .perf-arrow { font-size: 18px; margin: 6px 0; }
+  .perf-body { font-size: 11px; color: #555; font-style: italic; }
+  .perf-extra { font-size: 11px; color: #555; margin-top: 5px; padding-top: 5px; border-top: 1px solid rgba(0,0,0,0.1); display: none; line-height: 1.4; }
+  .perf-note { background: #f8f4ee; border-radius: 6px; padding: 10px 12px; font-size: 12px; color: #555; border-left: 3px solid #c28a3a; font-style: italic; }
+
+  /* SIGNES */
+  .signe-card { border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; position: relative; overflow: hidden; }
+  .signe-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+  .signe-niveau1 { background: #f0f8f0; }
+  .signe-niveau1::before { background: #7a9e6e; }
+  .signe-niveau2 { background: #f0f4f8; }
+  .signe-niveau2::before { background: #5b7fa6; }
+  .signe-niveau3 { background: #f8f4f8; }
+  .signe-niveau3::before { background: #9a6e9a; }
+  .signe-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .signe-label { font-weight: bold; font-size: 12px; }
+  .signe-type { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: #888; }
+  .signe-body { font-size: 11px; font-style: italic; color: #555; margin-bottom: 4px; }
+  .signe-milieu { font-size: 10px; color: #aaa; margin-top: 4px; }
+
+  /* FOOTER / REFERENCES */
+  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 11px; color: #777; }
+  footer h2 { font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 12px; }
+  footer ol { padding-left: 20px; }
+  footer li { margin-bottom: 10px; line-height: 1.5; }
+  footer a { color: #5b7fa6; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .note { font-style: italic; color: #aaa; font-size: 10px; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sémiotique des Transactions Coopératives (STC)</h1>
+  <div class="subtitle">Artefact pédagogique — mise en scène par l'exemple du repas</div>
+  <div class="context">Utopia · living lab · Pays La Châtre en Berry — juin 2026</div>
+</header>
+
+<div class="widget-title">Sémiotique des Transactions Coopératives</div>
+<div class="widget-subtitle">Zacklad 2020 — artefact pédagogique par l'exemple du repas</div>
+
+<div class="mode-toggle">
+  <button class="mode-btn active" onclick="setMode('solo')">🍽 Repas seul</button>
+  <button class="mode-btn" onclick="setMode('collectif')">🪑 Repas partagé</button>
+  <button class="mode-btn" onclick="setMode('lisiere')">🌿 Lisières</button>
+</div>
+<div class="mode-label" id="mode-label">Un sujet unique assume tous les rôles actantiels</div>
+
+<div class="tabs">
+  <div class="tab active" data-tab="parcours" onclick="setTab('parcours')">Parcours</div>
+  <div class="tab" data-tab="actants" onclick="setTab('actants')">Actants</div>
+  <div class="tab" data-tab="artefacts" onclick="setTab('artefacts')">Artefacts</div>
+  <div class="tab" data-tab="performance" onclick="setTab('performance')">Performance</div>
+  <div class="tab" data-tab="signes" onclick="setTab('signes')">Signes</div>
+</div>
+
+<!-- PARCOURS -->
+<div class="panel active" id="panel-parcours">
+  <div class="parcours-flow">
+    <div class="etape active" onclick="selectEtape(this,'eng')">
+      <div class="etape-label">1. Engagement</div>
+      <div class="etape-title">Vouloir / Devoir</div>
+      <div class="etape-body"
+        data-solo="« Ce soir je me fais un vrai repas. » Je formule le projet pour moi-même — commanditaire de ma propre transaction."
+        data-collectif="« J'invite des amis samedi. » Je lance l'invitation, nous convenons ensemble du menu et du partage des tâches."
+        data-lisiere="Mail 1 : « si la lisière savait ce qu'elle sait déjà... » — l'artefact engageant virtualise une valeur sans forme encore. Opt-in = contrat moral."></div>
+      <div class="etape-extra" id="extra-eng"></div>
+    </div>
+    <div class="etape" onclick="selectEtape(this,'comp')">
+      <div class="etape-label">2. Compétence</div>
+      <div class="etape-title">Savoir / Pouvoir</div>
+      <div class="etape-body"
+        data-solo="Je cherche une recette, je liste les courses, j'organise le temps. Je suis à la fois entrepreneur et réalisateur en train de se doter des moyens."
+        data-collectif="Chacun prépare sa part : l'un apporte le vin, l'autre le dessert. Les rôles se distribuent selon les compétences disponibles."
+        data-lisiere="Mails 2-7 : framapad bac à sable, carte GogoCarto, vocabulaire partagé. Doter le collectif de catégories avant la performance collective."></div>
+      <div class="etape-extra" id="extra-comp"></div>
+    </div>
+    <div class="etape" onclick="selectEtape(this,'perf')">
+      <div class="etape-label">3. Performance</div>
+      <div class="etape-title">Faire / Être / Habiter</div>
+      <div class="etape-body"
+        data-solo="Je cuisine, je dresse la table, je mange. Le même sujet réalise et bénéficie — le repas me transforme autant que je le produis."
+        data-collectif="On cuisine ensemble, on met la table, on mange. Réalisateurs et bénéficiaires sont en relation directe et symétrique."
+        data-lisiere="Lettre Passerelle des savoirs, tribune-vision, ateliers de lavage des mots : production de l'œuvre avec les co-habitants. Première performance collective à venir."></div>
+      <div class="etape-extra" id="extra-perf"></div>
+    </div>
+    <div class="etape" onclick="selectEtape(this,'bilan')">
+      <div class="etape-label">4. Bilan</div>
+      <div class="etape-title">Évaluation + Rétribution</div>
+      <div class="etape-body"
+        data-solo="Je me demande si c'était bon. Je me félicite — ou je note ce qui n'allait pas. La rétribution est entièrement interne : sans témoin, elle peut manquer de réalité."
+        data-collectif="Les convives disent ce qu'ils ont aimé. La rétribution est externe et réelle — le retour des autres ancre la valeur de ce qui a été produit."
+        data-lisiere="Réponse de Mme Richard (bilan partiel +), friction d'Yves (bilan reconfigurant), Plan A/B mi-juillet. La rétribution externe reste incertaine — limite structurelle de l'auto-commande."></div>
+      <div class="etape-extra" id="extra-bilan"></div>
+    </div>
+  </div>
+  <div class="tip">Cliquer sur une étape pour la mettre en avant</div>
+</div>
+
+<!-- ACTANTS -->
+<div class="panel" id="panel-actants">
+  <div class="actants-grid">
+    <div class="actant-card" data-actant="commanditaire" onclick="this.classList.toggle('expanded')">
+      <div class="actant-title">1. Commanditaire</div>
+      <div class="actant-verbe">Exprimer le besoin / Tenir les valeurs</div>
+      <div class="actant-body"
+        data-solo="« Je veux un bon repas. » — formule le projet, est garant des valeurs (se nourrir bien, prendre soin de soi)."
+        data-collectif="L'hôte + les invités : le besoin de convivialité est partagé. Commanditaire collectif tacite."
+        data-lisiere="Stéphane-commanditaire : rendre le tissu co-habitant conscient de lui-même. Commanditaire invoqué : la société locale, les co-habitants comme demande diffuse."></div>
+      <div class="actant-extra"
+        data-solo="Ici le commanditaire et le bénéficiaire coïncident — je veux le repas pour moi-même."
+        data-collectif="L'hôte initie, mais les invités co-construisent le besoin en acceptant l'invitation."
+        data-lisiere="Zacklad : le commanditaire « peut correspondre à la société dans sa globalité ou aux intérêts d'un public particulier, comme dans le cas d'une action militante ou associative. »"></div>
+    </div>
+    <div class="actant-card" data-actant="entrepreneur" onclick="this.classList.toggle('expanded')">
+      <div class="actant-title">2. Entrepreneur</div>
+      <div class="actant-verbe">Concevoir / Garantir les moyens</div>
+      <div class="actant-body"
+        data-solo="« Je choisis la recette, planifie le temps, gère le budget. » — prend en charge la satisfaction sans être le cuisinier de chaque geste."
+        data-collectif="L'hôte reste entrepreneur : il structure l'offre (le repas), organise les contributions de chacun."
+        data-lisiere="Stéphane-entrepreneur : conçoit la liste, sollicite la Passerelle pour trouver ressources et légitimité. Innovation ascendante non mandatée — il cherche un commanditaire externe (Plan A)."></div>
+      <div class="actant-extra"
+        data-solo="L'entrepreneur conçoit et contrôle, mais n'est pas nécessairement le réalisateur — même quand c'est le même sujet, la posture change."
+        data-collectif="Si un invité prend l'initiative de cuire un plat, il glisse momentanément vers le rôle d'entrepreneur partiel."
+        data-lisiere="Zacklad : « l'entrepreneur quand il est lui-même à l'initiative d'une offre et qu'il sollicite un commanditaire pour trouver des ressources ou une légitimité. »"></div>
+    </div>
+    <div class="actant-card" data-actant="realisateur" onclick="this.classList.toggle('expanded')">
+      <div class="actant-title">3. Réalisateur</div>
+      <div class="actant-verbe">Donner / Faire / Aménager</div>
+      <div class="actant-body"
+        data-solo="« Je coupe, je fais revenir, je dresse. » — mobilise les compétences effectives, produit l'œuvre geste par geste."
+        data-collectif="Rôle distribué : chacun réalise sa part. Le réalisateur collectif est plus robuste — la compétence est moins concentrée."
+        data-lisiere="Stéphane-réalisateur écrit et envoie les mails. Yves, en répondant, devient réalisateur partiel : il co-produit l'artefact « ateliers de lavage des mots » sans le savoir."></div>
+      <div class="actant-extra"
+        data-solo="Quand le réalisateur est seul, la compétence est concentrée — et la fragilité aussi."
+        data-collectif="La distribution du rôle de réalisateur est ce qui transforme un repas solitaire en repas coopératif."
+        data-lisiere="Émergence d'actants réalisateurs partiels = signe que la transaction sort de l'auto-commande. C'est ce que la liste cherche à provoquer."></div>
+    </div>
+    <div class="actant-card" data-actant="beneficiaire" onclick="this.classList.toggle('expanded')">
+      <div class="actant-title">4. Bénéficiaire</div>
+      <div class="actant-verbe">Recevoir / Ressentir / Se transformer</div>
+      <div class="actant-body"
+        data-solo="« Je mange, je me nourris, je prends soin de moi. » — fait l'expérience directe du repas. Bénéficiaire récursif : la réflexivité du geste m'enrichit."
+        data-collectif="Les convives : ils font l'expérience directe du repas. Leur satisfaction est visible et réelle — elle rétribue l'hôte."
+        data-lisiere="Bénéficiaires premiers : membres de la liste (transformation de leur perception comme co-habitants). Bénéficiaire récursif : Stéphane lui-même (auto-interlocution amplifiée par IA)."></div>
+      <div class="actant-extra"
+        data-solo="Quand bénéficiaire = commanditaire = même sujet, la rétribution est interne. Elle peut manquer d'ancrage externe."
+        data-collectif="Les convives bénéficient mais aussi rétribuent l'hôte par leur présence et leur retour. La chaîne est complète."
+        data-lisiere="La fragilité : si les membres restent silencieux, le bénéficiaire externe est invisible. La rétribution externe (Mme Richard, Plan A/B) devient cruciale."></div>
+    </div>
+  </div>
+  <div class="info-box" id="actants-note">
+    <strong>Un sujet unique, quatre postures.</strong> Zacklad (p. 22, note 10) : « Quand un sujet est dans une conversation avec lui-même, il assume successivement les différents rôles actantiels du parcours transactionnel. »
+  </div>
+  <div class="tip">Cliquer sur un actant pour le développer</div>
+</div>
+
+<!-- ARTEFACTS -->
+<div class="panel" id="panel-artefacts">
+  <div class="artefact-row artefact-engageant">
+    <div class="artefact-icon">📋</div>
+    <div class="artefact-content">
+      <div class="artefact-type">Artefact engageant (virtualisant)</div>
+      <div class="artefact-body"
+        data-solo="L'envie formulée, la décision prise : « ce soir je cuisine. » Aucun témoin — la promesse est faite à soi-même."
+        data-collectif="L'invitation lancée, la date fixée, le menu convenu. La promesse est publique — elle crée une obligation réelle."
+        data-lisiere="Mail 1 + opt-in + règles de la liste. La phrase « si la lisière savait ce qu'elle sait déjà » : artefact engageant le plus dense, il virtualise sans définir."></div>
+    </div>
+  </div>
+  <div class="artefact-row artefact-capacitant">
+    <div class="artefact-icon">🔧</div>
+    <div class="artefact-content">
+      <div class="artefact-type">Artefacts capacitants (instrumentaux)</div>
+      <div class="artefact-body"
+        data-solo="La recette, les ustensiles, la liste de courses. Équipent l'action sans être l'œuvre — instruments incorporés au schème d'action (Rabardel)."
+        data-collectif="Recettes partagées, courses réparties, groupe de messagerie pour coordonner. Les capacitants sont distribués entre les participants."
+        data-lisiere="FramaGroupes, Framapad, GogoCarto, carte temporelle du marché. Dispositifs délibérément minimaux — prescriptions faibles (Hatchuel) plutôt que rationalisants."></div>
+    </div>
+  </div>
+  <div class="artefact-row artefact-porteur">
+    <div class="artefact-icon">🍽</div>
+    <div class="artefact-content">
+      <div class="artefact-type">Artefact porteur de valeur (l'œuvre)</div>
+      <div class="artefact-body"
+        data-solo="Le plat servi, la table dressée. Actualisation de ce qui était virtuel dans l'engagement. Sa valeur reste privée — sans regard extérieur."
+        data-collectif="Le repas vécu ensemble. Sa valeur est sociale et partagée — elle existe dans le regard et le plaisir des convives."
+        data-lisiere="La lettre à Mme Richard (récit intermédiaire adressable). Les mots émergents : « agenda civique commun », « ateliers de lavage des mots », « tissu co-habitant ». Œuvres portant de nouvelles catégories."></div>
+    </div>
+  </div>
+  <div class="artefact-row artefact-bilan">
+    <div class="artefact-icon">⚖️</div>
+    <div class="artefact-content">
+      <div class="artefact-type">Artefacts bilan (évaluation + rétribution)</div>
+      <div class="artefact-body"
+        data-solo="« C'était bien ? » — je m'auto-évalue. Rétribution symbolique interne, sans ancrage externe. Risque de complaisance ou d'excès de sévérité."
+        data-collectif="« C'était délicieux ! » des convives. Rétribution externe visible et réelle — elle clôt la boucle transactionnelle proprement."
+        data-lisiere="Réponse de Mme Richard (+), friction d'Yves (reconfigurant), annonce Plan A/B. La rétribution reste externe et incertaine — limite de la transaction auto-commanditée."></div>
+    </div>
+  </div>
+</div>
+
+<!-- PERFORMANCE -->
+<div class="panel" id="panel-performance">
+  <div class="perf-grid">
+    <div class="perf-card individuation" onclick="this.querySelector('.perf-extra').style.display = this.querySelector('.perf-extra').style.display==='block'?'none':'block'">
+      <div class="perf-title">Individuation</div>
+      <div class="perf-arrow">🧍→✨</div>
+      <div style="font-size:10px;color:#5b7fa6;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.06em">Sujet → Self</div>
+      <div class="perf-body"
+        data-solo="J'apprends à cuisiner. Je deviens quelqu'un qui sait prendre soin de soi."
+        data-collectif="Chacun se découvre dans l'échange. L'individuation est collective — le « nous » se forme autour de la table."
+        data-lisiere="Les membres se perçoivent progressivement comme co-habitants d'une expérience commune. Stéphane passe de praticien solitaire à entrepreneur d'un collectif naissant."></div>
+      <div class="perf-extra"
+        data-solo="Modalité de l'être : la transaction me transforme autant qu'elle produit un objet."
+        data-collectif="L'individuation collective (Simondon) : le self collectif se constitue dans l'expérience partagée du repas."
+        data-lisiere="Faingold / Vermersch : rendre explicite à soi-même ce que l'action nous fait. L'individuation est la composante que les métriques classiques (nb de réponses) ne mesurent pas."></div>
+    </div>
+    <div class="perf-card creation" onclick="this.querySelector('.perf-extra').style.display = this.querySelector('.perf-extra').style.display==='block'?'none':'block'">
+      <div class="perf-title">Création</div>
+      <div class="perf-arrow">🥕→🍲</div>
+      <div style="font-size:10px;color:#c28a3a;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.06em">Artefact → Œuvre</div>
+      <div class="perf-body"
+        data-solo="Les ingrédients deviennent un plat. Production de l'artefact porteur de valeur — même si personne d'autre ne le voit."
+        data-collectif="Le plat est co-produit. Sa valeur est amplifiée par la contribution de chacun et la reconnaissance mutuelle."
+        data-lisiere="Les mails transforment des expériences vécues en catégories partagées. L'œuvre en cours : un objet-frontière (Star &amp; Griesemer) qui n'existait pas."></div>
+      <div class="perf-extra"
+        data-solo="Modalité du faire : la valeur est dans l'artefact produit, indépendamment du regard extérieur."
+        data-collectif="Co-création : le plat est plus que la somme des ingrédients — l'acte de cuisiner ensemble produit de la relation."
+        data-lisiere="Œuvre secondaire mais décisive : le vocabulaire émergent (« tissu co-habitant », « lavage des mots »). Ces mots sont des artefacts porteurs de valeur."></div>
+    </div>
+    <div class="perf-card territorialisation" onclick="this.querySelector('.perf-extra').style.display = this.querySelector('.perf-extra').style.display==='block'?'none':'block'">
+      <div class="perf-title">Territorialisation</div>
+      <div class="perf-arrow">🪑→🏡</div>
+      <div style="font-size:10px;color:#7a9e6e;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.06em">Dispositif → Milieu</div>
+      <div class="perf-body"
+        data-solo="La table dressée, l'ambiance, la cuisine comme espace habitable ce soir. Aménagement d'un milieu pour soi."
+        data-collectif="L'espace devient lieu commun — la table dressée, les places, le rythme partagé du repas. Milieu aménitaire."
+        data-lisiere="Dominante ici. La liste vise à rendre la lisière habitable différemment — créer des aménités cognitives et relationnelles. TEEPEE/Passerelles = dispositif manquant entre la carte et la conscience du « petit nous »."></div>
+      <div class="perf-extra"
+        data-solo="Modalité de l'habiter : même seul, on aménage un milieu — la différence entre manger debout et s'asseoir à table."
+        data-collectif="La territorialisation collective produit un bien commun : un espace que chacun contribue à rendre habitable pour tous."
+        data-lisiere="Deleuze/Guattari via Zacklad : « un processus appropriatif qui rapporte un ensemble objectif de milieux et des investissements subjectifs, individuels et collectifs. »"></div>
+    </div>
+  </div>
+  <div class="perf-note">Question capacitante (Falzon) : cette transaction développe-t-elle de nouvelles capacités — ou gère-t-elle simplement l'existant ?</div>
+  <div class="tip">Cliquer sur une composante pour développer</div>
+</div>
+
+<!-- SIGNES -->
+<div class="panel" id="panel-signes">
+  <div class="signe-card signe-niveau1">
+    <div class="signe-header">
+      <div class="signe-label">Niveau 1 — Sens en situation</div>
+      <div class="signe-type">Affordance / Indexical</div>
+    </div>
+    <div class="signe-body"
+      data-solo="L'odeur qui sort du four, la couleur du plat, la faim dans le corps. Sens lié à la présence physique — non transportable hors de la situation."
+      data-collectif="Le sourire des convives, le bruit des couverts, l'ambiance de la table. Sens partagé en situation — le repas existe pour ceux qui sont là."
+      data-lisiere="Le marché du 11 avril, la canicule, les corps qui se croisent. La liste rend ces sens-en-situation adressables à ceux qui n'étaient pas là — c'est sa fonction propre."></div>
+    <div class="signe-milieu">↔ Environnement singulier · Raisonnement pratique · Corporéité</div>
+  </div>
+  <div class="signe-card signe-niveau2">
+    <div class="signe-header">
+      <div class="signe-label">Niveau 2 — Signification référentielle</div>
+      <div class="signe-type">Symbole référentiel / Type</div>
+    </div>
+    <div class="signe-body"
+      data-solo="« Un dîner réussi », « une recette provençale ». Catégories qui permettent de reconnaître, classer, répéter — de transmettre à quelqu'un qui n'était pas là."
+      data-collectif="« Un repas convivial », « une table d'hôtes ». Types partagés qui structurent l'attente de chacun et rendent la coordination possible."
+      data-lisiere="« Agenda civique commun », « sciences citoyennes », « communauté d'ateliers ». La liste opère principalement à ce niveau. Friction d'Yves : contestation du niveau 2 depuis le niveau 1 — « citoyennes » ne s'ancre pas dans son vécu."></div>
+    <div class="signe-milieu">↔ Milieu d'activité · Raisonnement par modèles · Situations récurrentes</div>
+  </div>
+  <div class="signe-card signe-niveau3">
+    <div class="signe-header">
+      <div class="signe-label">Niveau 3 — Signification interprétative</div>
+      <div class="signe-type">Symbole interprétatif / Concept</div>
+    </div>
+    <div class="signe-body"
+      data-solo="« Le repas comme rituel de commensalité produisant du lien social. » Cadre qui rend compte de la genèse du phénomène — nécessite un recul théorique."
+      data-collectif="« La table comme espace démocratique de délibération » (Habermas). La signification interprétative enrichit la pratique — sans l'écraser."
+      data-lisiere="Dewey (public émergent), Guattari (trois écologies), Ingold (nœuds provisoires). Ce niveau reste hors de la liste — il est dans la thèse, Quartz, CARe. Décision architecturale délibérée."></div>
+    <div class="signe-milieu">↔ Écosystème élargi · Raisonnement théorique / abductif · Genèse des situations</div>
+  </div>
+</div>
+
+<footer>
+  <h2>Références</h2>
+  <ol>
+    <li>
+      Zacklad, M. (2020). <em>Changements de régimes de conversation dans la transition numérique</em>.
+      <em>Approches Théoriques en Information-Communication (ATIC)</em>, 2020/1, p. 7–38.<br>
+      Accès libre : <a href="https://archivesic.ccsd.cnrs.fr/sic_01958320v2" target="_blank">archivesic.ccsd.cnrs.fr/sic_01958320v2</a><br>
+      Version éditeur : <a href="https://shs.cairn.info/revue-approches-theoriques-en-information-communication-2020-1-page-7?lang=fr" target="_blank">cairn.info — ATIC 2020/1 p. 7</a>
+    </li>
+  </ol>
+  <div class="note">Artefact produit dans le cadre du projet Utopia (living lab, Pays La Châtre en Berry). CC BY-SA — Stéphane, juin 2026.</div>
+</footer>
+
+<script>
+  let currentMode = 'solo';
+  const modeLabels = {
+    solo: 'Un sujet unique assume tous les rôles actantiels',
+    collectif: 'Les rôles se distribuent entre plusieurs sujets',
+    lisiere: 'Transposition aux conversations en lisières'
+  };
+  const actantsNotes = {
+    solo: '<strong>Un sujet unique, quatre postures.</strong> Zacklad (note 10, p.14) : « Quand un sujet est dans une conversation avec lui-même, il assume successivement les différents rôles actantiels du parcours transactionnel. »',
+    collectif: '<strong>Rôles distribués.</strong> Dans un repas partagé, commanditaire, entrepreneur, réalisateurs et bénéficiaires sont des sujets distincts — la rétribution est réelle et visible pour chacun.',
+    lisiere: '<strong>Auto-commande et rétribution externe.</strong> Stéphane cumule tous les rôles — stable à court terme, fragile à moyen terme. La rétribution dépend d\'un retour externe : Mme Richard, Plan A/B, la liste elle-même.'
+  };
+
+  function setMode(mode) {
+    currentMode = mode;
+    document.getElementById('mode-label').textContent = modeLabels[mode];
+    document.querySelectorAll('.mode-btn').forEach((b,i) => {
+      b.classList.toggle('active', ['solo','collectif','lisiere'][i] === mode);
+    });
+    ['etape-body','actant-body','actant-extra','artefact-body','perf-body','perf-extra','signe-body'].forEach(cls => {
+      document.querySelectorAll('.' + cls).forEach(el => {
+        const txt = el.getAttribute('data-' + mode);
+        if (txt !== null) el.textContent = txt;
+      });
+    });
+    const note = document.getElementById('actants-note');
+    if (note) note.innerHTML = actantsNotes[mode];
+    const activeEtape = document.querySelector('.etape.active');
+    if (activeEtape) updateEtapeExtra(activeEtape);
+  }
+
+  function setTab(tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
+  }
+
+  const etapeExtras = {
+    eng: {
+      solo: '',
+      collectif: 'L\'invitation publique crée une obligation mutuelle — contrairement à l\'intention privée, elle engage les deux parties.',
+      lisiere: 'L\'artefact engageant est la note de bas de page n°10 de Zacklad mise en acte : la conversation avec soi-même qui invite d\'autres à entrer.'
+    },
+    comp: {
+      solo: 'Seul, la phase de compétence peut être escamotée — on improvise. C\'est là que l\'auto-transaction est la plus fragile.',
+      collectif: 'La compétence distribuée est plus robuste : chacun apporte ce qu\'il sait, les lacunes de l\'un sont comblées par l\'autre.',
+      lisiere: 'Mails 3-7 : la liste opère en phase capacitante. Elle dote le collectif de catégories avant que la performance collective puisse avoir lieu.'
+    },
+    perf: {
+      solo: 'La performance sans témoin est valide transactionnellement — mais la rétribution qui suit sera nécessairement interne.',
+      collectif: 'La performance co-réalisée produit une valeur collective que ni l\'hôte ni les invités n\'auraient pu produire seuls.',
+      lisiere: 'La performance collective reste à venir. La liste est encore en phase capacitante. Les prochains mails seront les premiers gestes vraiment performatifs.'
+    },
+    bilan: {
+      solo: 'Sans témoin, le bilan reste interne. Le risque : une évaluation déconnectée du réel — trop sévère ou trop complaisant.',
+      collectif: 'Le bilan collectif est ancré : la satisfaction des convives est visible et réelle. La rétribution clôt la boucle proprement.',
+      lisiere: 'C\'est ici que la transaction auto-commanditée montre sa limite structurelle. La rétribution dépend entièrement d\'un retour externe encore incertain.'
+    }
+  };
+
+  function updateEtapeExtra(el) {
+    const id = el.dataset.id;
+    const extraEl = document.getElementById('extra-' + id);
+    if (!extraEl) return;
+    const txt = (etapeExtras[id] || {})[currentMode] || '';
+    extraEl.textContent = txt;
+    extraEl.classList.toggle('visible', txt.length > 0);
+  }
+
+  function selectEtape(el, id) {
+    document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
+    el.classList.add('active');
+    el.dataset.id = id;
+    updateEtapeExtra(el);
+  }
+
+  document.querySelectorAll('.etape').forEach((el, i) => {
+    el.dataset.id = ['eng','comp','perf','bilan'][i];
+  });
+  setMode('solo');
+  const firstEtape = document.querySelector('.etape.active');
+  if (firstEtape) updateEtapeExtra(firstEtape);
+</script>
+</body>
+</html>

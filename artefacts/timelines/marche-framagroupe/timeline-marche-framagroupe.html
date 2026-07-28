@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ce qui se passe depuis la place du marché de la Châtre — Conversations en lisières</title>
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  <style>
+    body { margin: 0; font-family: Georgia, serif; background: #f7f4ef; }
+    #header {
+      padding: 1.2rem 2rem 0.8rem;
+      background: #f7f4ef;
+      border-bottom: 1px solid #ddd;
+    }
+    #header h1 { margin: 0 0 0.2rem; font-size: 1.3rem; color: #2c2c2c; }
+    #header p  { margin: 0; font-size: 0.85rem; color: #666; }
+    .badge {
+      display: inline-block; margin-top: 0.4rem;
+      padding: 0.15rem 0.6rem; border-radius: 3px;
+      font-size: 0.75rem;
+    }
+    .badge-scene      { background: #eddcca; color: #6b3a1a; }
+    .badge-circulation{ background: #cde0ee; color: #1a4a6b; }
+    .badge-horizon    { background: #d4eada; color: #2a6b4a; }
+    #react-bar {
+      padding: 0.5rem 2rem;
+      background: #e8f4ea;
+      border-bottom: 1px solid #c4dbc8;
+      font-size: 0.85rem;
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+    #react-bar span { color: #555; }
+    #react-bar a.framapad-btn {
+      color: #fff;
+      background: #3a7a50;
+      text-decoration: none;
+      padding: 0.25rem 0.9rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+    #react-bar a.framapad-btn:hover { background: #2a5a3c; }
+    #react-bar a.framapad-btn:before { content: "✏ "; }
+    #timeline-embed { width: 100%; height: calc(100vh - 140px); }
+    #fallback {
+      display: none; padding: 2.5rem 3rem;
+      max-width: 540px; margin: 0 auto;
+    }
+    #fallback p  { margin-bottom: 0.9rem; line-height: 1.6; }
+    #fallback code { background: #ede8df; padding: 1px 5px; border-radius: 2px; }
+    #fallback hr { border: none; border-top: 1px solid #ddd; margin: 1.2rem 0; }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <h1>Ce qui se passe depuis la place du marché de la Châtre</h1>
+  <p>Pays La Châtre en Berry · Un récit du territoire pour les abonnés de Conversations en lisières</p>
+  <span class="badge badge-scene">🏛 Scènes du marché</span>
+  <span class="badge badge-circulation">📨 Ce qui a circulé</span>
+  <span class="badge badge-horizon">🌱 Ce qui s'ouvre</span>
+</div>
+
+<div id="react-bar">
+  <span>Quelque chose vous fait réagir ?</span>
+  <a class="framapad-btn" id="framapad-link" href="[URL_FRAMAPAD_TIMELINE]" target="_blank">
+    Écrire sur le Framapad
+  </a>
+  <span id="react-note" style="font-size:0.8rem;color:#777;font-style:italic">
+    Libre, sans format, sans obligation — pour corriger, compléter, réagir
+  </span>
+</div>
+
+<div id="timeline-embed"></div>
+
+<div id="fallback">
+  <p style="font-size:1.05rem;color:#333">
+    ⚠ Le fichier JSON ne peut pas être chargé directement depuis le système de fichiers.
+  </p>
+  <p><strong>Option A</strong> — double-cliquez sur <code>lancer-marche-framagroupe.bat</code></p>
+  <hr>
+  <p><strong>Option B</strong> — chargez le JSON manuellement :</p>
+  <input type="file" id="json-fallback" accept=".json"
+    style="font-family:Georgia,serif;font-size:0.9rem;cursor:pointer">
+</div>
+
+<script>
+// ── Couleurs par groupe ────────────────────────────────────────────────────
+var GROUP_COLORS = {
+  'scene':       '#8B4513',
+  'circulation': '#2F6B8A',
+  'horizon':     '#2a6b4a'
+};
+
+// ── Normalise date : accepte string "2026-05-14" OU objet {year,month,day} ──
+function parseDate(d, fallback) {
+  fallback = fallback || '2024-01-01';
+  if (!d) d = fallback;
+  if (typeof d === 'string') {
+    var p = d.split('-');
+    return { year: parseInt(p[0])||2024, month: parseInt(p[1])||1, day: parseInt(p[2])||1 };
+  }
+  return { year: d.year||2024, month: d.month||1, day: d.day||1 };
+}
+
+// ── Conversion JSON enrichi → format Knightlab ────────────────────────────
+function toKnightlab(data) {
+
+  // Mettre à jour le lien Framapad depuis le JSON
+  var meta = data.metadata || {};
+  if (meta.framapad_url && meta.framapad_url !== '[URL_FRAMAPAD_TIMELINE]') {
+    document.getElementById('framapad-link').href = meta.framapad_url;
+  }
+
+  var events = (data.events || []).map(function(evt) {
+    var statut = evt.statut === 'prospectif' ? ' 🔮' : ' ✓';
+    var bifur  = evt.bifurcation ? ' ⚡' : '';
+    var col    = GROUP_COLORS[evt.group] || '#555';
+
+    var body = '<p style="margin-bottom:0.5em">' + (evt.summary || '') + '</p>';
+    if (evt.situation && evt.situation.trim())
+      body += '<p><strong>Situation :</strong> ' + evt.situation + '</p>';
+    if (evt.enjeu && evt.enjeu.trim())
+      body += '<p><strong>Enjeu :</strong> ' + evt.enjeu + '</p>';
+    if (evt.effet && evt.effet.trim() && evt.effet !== 'À venir.')
+      body += '<p><strong>Effet :</strong> ' + evt.effet + '</p>';
+    if (evt.reflexive_notes && evt.reflexive_notes.length)
+      body += '<p style="color:#555;font-style:italic;font-size:0.9em;margin-top:0.5em;border-left:3px solid #ccc;padding-left:0.7em">'
+            + evt.reflexive_notes.join('<br>') + '</p>';
+    body += '<p style="margin-top:0.6em"><span style="color:' + col + ';font-size:0.78em;font-weight:bold">'
+          + (data.groups || []).filter(function(g){return g.id===evt.group;}).map(function(g){return g.label;}).join('')
+          + '</span></p>';
+    if (evt.statut === 'prospectif')
+      body += '<p><span style="color:#c47a2f;font-size:0.78em">[à venir]</span></p>';
+
+    var slide = {
+      start_date: parseDate(evt.start_date),
+      text: {
+        headline: evt.title + bifur + statut,
+        text: body
+      },
+      group: (data.groups || [])
+        .filter(function(g){return g.id===evt.group;})
+        .map(function(g){return g.label;})
+        .join('') || evt.group || '',
+      background: { color: col }
+    };
+    if (evt.media && evt.media.url) {
+      slide.media = { url: evt.media.url, caption: evt.media.caption || '' };
+    }
+    return slide;
+  });
+
+  var eras = (data.eras || []).map(function(era) {
+    return {
+      start_date: parseDate(era.start_date, '2024-01-01'),
+      end_date:   parseDate(era.end_date,   '2026-12-31'),
+      text: { headline: era.headline || '', text: era.text || '' }
+    };
+  });
+
+  return {
+    title: {
+      text: {
+        headline: meta.title || 'Timeline',
+        text: '<p>' + (meta.subtitle || '') + '</p>'
+            + '<p style="font-size:0.85em;color:#888;margin-top:0.6em">Territoire : ' + (meta.territory || '') + '</p>'
+            + '<p style="font-size:0.85em;color:#666;margin-top:0.6em">'
+            + (meta.note || '') + '</p>'
+      }
+    },
+    eras:   eras,
+    events: events
+  };
+}
+
+// ── Initialisation ────────────────────────────────────────────────────────
+function initTimeline(jsonData) {
+  document.getElementById('fallback').style.display = 'none';
+  document.getElementById('timeline-embed').style.display = 'block';
+  try {
+    window.TLInstance = new TL.Timeline('timeline-embed', toKnightlab(jsonData), {
+      language: 'fr',
+      timenav_height_percentage: 25,
+      scale_factor: 1,
+      marker_padding: 10,
+      start_at_end: false,
+      hash_bookmark: false
+    });
+  } catch(err) {
+    document.getElementById('timeline-embed').innerHTML =
+      '<p style="padding:2rem;color:#c00">Erreur Knightlab : ' + err.message + '</p>';
+  }
+}
+
+// ── Chargement ─────────────────────────────────────────────────────────────
+function start() {
+  fetch('timeline-marche-framagroupe.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(data) { initTimeline(data); })
+    .catch(function() {
+      document.getElementById('timeline-embed').style.display = 'none';
+      document.getElementById('fallback').style.display = 'block';
+
+      document.getElementById('json-fallback').addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+          try {
+            var loaded = JSON.parse(ev.target.result);
+            document.getElementById('timeline-embed').style.height = 'calc(100vh - 96px)';
+            initTimeline(loaded);
+          } catch(err) {
+            alert('JSON invalide : ' + err.message);
+          }
+        };
+        reader.readAsText(file);
+      });
+    });
+}
+</script>
+
+<!-- KnightLab chargé en dernier — start() appelé quand il est prêt -->
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"
+        onload="start()"></script>
+</body>
+</html>
