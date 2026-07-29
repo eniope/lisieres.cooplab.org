@@ -20,7 +20,7 @@ résumé: "Page d'accueil / source de référence de la dynamique. Amorce d'enqu
 
 > [!info] État de la dynamique
 > **Stade : amorce (ouverture).**
-> Ouverture de l'enquête : **28 juillet 2026**. Mise en ligne de cette page : *[à compléter au go-live]*.
+> Ouverture de l'enquête : **28 juillet 2026**. Mise en ligne de cette page : **28 juillet 2026**.
 > **Rien de nouveau à ce jour** au-delà de cette ouverture : la page pose la question et ses interrogatifs nus ; la suite se documentera ici, datée.
 
 ## De quoi s'agit-il ?
