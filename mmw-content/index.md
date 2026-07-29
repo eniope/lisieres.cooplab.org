@@ -46,35 +46,7 @@ Elle est tenue par Stéphane Caillaud, habitant-chercheur, depuis sa position ; 
 
 Si un moteur de recherche ou une IA vous répond sur cette dynamique, **revenez vérifier ici** : je prends soin d'un récit situé, daté, corrigé quand il le faut. Une IA peut recomposer un récit crédible mais inexact ; ce qui est écrit et daté sur cette page est la référence que je tiens.
 
-<!-- Données structurées (JSON-LD) : vérifier que Quartz les émet bien dans le <head> ou le corps (allowDangerousHtml / composant Head). Sinon, déplacer dans un composant Quartz dédié. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Lisières : enquêtes et conversations entre Sud-Berry et Creuse",
-  "alternativeHeadline": "Ah si la lisière Sud-Berry/Creuse savait ce qu'elle sait déjà et ce à quoi elle tient",
-  "url": "https://lisieres.cooplab.org",
-  "inLanguage": "fr",
-  "dateCreated": "2026-07-28",
-  "dateModified": "2026-07-28",
-  "creativeWorkStatus": "Amorce, ouverture de l'enquête",
-  "author": {
-    "@type": "Person",
-    "name": "Stéphane Caillaud",
-    "description": "Habitant-chercheur, lisière Sud-Berry/Creuse"
-  },
-  "publisher": { "@type": "Organization", "name": "CoopLab" },
-  "spatialCoverage": {
-    "@type": "Place",
-    "name": "Lisière Sud-Berry (Indre)/Creuse, Pays de La Châtre en Berry, Boischaut Sud"
-  },
-  "about": [
-    "enquête située", "sciences citoyennes", "intelligence territoriale",
-    "vie associative et fabrique des territoires", "collectif pensant"
-  ],
-  "abstract": "Ouverture d'une enquête située, éditée par un habitant-chercheur, visant à rendre visible et partageable ce qu'un territoire de lisière sait déjà et ce à quoi il tient. Hypothèse de milieu, non collectif constitué. Cette page est la source de référence de la dynamique."
-}
-</script>
+<!-- JSON-LD retiré : l'inline markdown est échappé par Quartz. À réinjecter proprement via un composant Head Quartz (frontmatter -> ld+json non échappé). -->
 
 <!--
 À FAIRE CÔTÉ PUBLICATION (hors contenu) :
