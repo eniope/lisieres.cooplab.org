@@ -19,7 +19,7 @@ résumé: "Premier cas / instance du geste. Amorce d'enquête située, hypothès
 *Lisières : enquêtes et conversations entre Sud-Berry et Creuse.*
 
 > [!note] Un cas, pas la règle
-> Cette enquête est le **premier cas** du geste décrit dans [[index|Ouvrir une enquête au premier kilomètre]]. La matrice dit comment ouvrir ; cette page dit ce qui s'ouvre ici, sur cette lisière.
+> Cette enquête est le **premier cas** du geste décrit dans [Ouvrir une enquête au premier kilomètre](/). La matrice dit comment ouvrir ; cette page dit ce qui s'ouvre ici, sur cette lisière.
 
 > [!info] État de la dynamique
 > **Stade : amorce (ouverture).**

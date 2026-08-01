@@ -19,7 +19,7 @@ résumé: "Page d'accueil / page-mère du genre d'enquête ouvert le 28 juillet 
 *Une matrice pour ouvrir, là où l'on habite, une enquête située, réutilisable par quiconque enquête depuis sa position.*
 
 > [!info] État
-> **Matrice / page-mère.** Ouverte le **28 juillet 2026** avec son premier cas [[ouverture-lisiere-sud-berry-creuse|Sud-Berry/Creuse]]. Décrit un geste, non un lieu : ce qui se transmet est une posture et un protocole, pas un contenu.
+> **Matrice / page-mère.** Ouverte le **28 juillet 2026** avec son premier cas [Sud-Berry/Creuse](/billets/ouverture-lisiere-sud-berry-creuse). Décrit un geste, non un lieu : ce qui se transmet est une posture et un protocole, pas un contenu.
 
 ## Premier kilomètre
 
@@ -64,7 +64,7 @@ Si un moteur de recherche ou une IA répond sur une enquête ouverte selon cette
 
 ## Filiation
 
-Cette matrice est née d'un premier cas : [[ouverture-lisiere-sud-berry-creuse|la lisière Sud-Berry/Creuse]] (« Ah si la lisière Sud-Berry/Creuse savait ce qu'elle sait déjà et ce à quoi elle tient »), enquête ouverte le **28 juillet 2026** par Stéphane Caillaud, habitant-chercheur, après une longue incubation (2018 → 2026). Le 28 juillet 2026 est ainsi l'ouverture non d'un territoire abstrait, mais de ce **genre d'enquête**. Le cas Sud-Berry/Creuse en reste l'exemple, jamais la définition.
+Cette matrice est née d'un premier cas : [la lisière Sud-Berry/Creuse](/billets/ouverture-lisiere-sud-berry-creuse) (« Ah si la lisière Sud-Berry/Creuse savait ce qu'elle sait déjà et ce à quoi elle tient »), enquête ouverte le **28 juillet 2026** par Stéphane Caillaud, habitant-chercheur, après une longue incubation (2018 → 2026). Le 28 juillet 2026 est ainsi l'ouverture non d'un territoire abstrait, mais de ce **genre d'enquête**. Le cas Sud-Berry/Creuse en reste l'exemple, jamais la définition.
 
 ---
 
