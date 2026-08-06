@@ -23,7 +23,7 @@ résumé: "Page d'accueil / page-mère du genre d'enquête ouvert le 6 août 202
 
 ## Premier kilomètre
 
-Dans le domaine de l'aménagement du territoire on parle du **dernier kilomètre** : le bout de réseau où le service finit par arriver. Et souvent mal en milieu rural depuis un centre qui décide ailleurs. Vu du réseau, le lieu habité est vu comme un terminus et la queue d'un plan.
+En logistique, en télécoms, puis en aménagement du territoire, on parle du **dernier kilomètre** : le bout de réseau où le service finit par arriver. Et souvent mal en milieu rural depuis un centre qui décide ailleurs. Vu du réseau, le lieu habité est vu comme un terminus et la queue d'un plan.
 
 Renversons la focale. Depuis là où l'on vit, ce même kilomètre n'est pas le dernier : c'est **le premier**. De ce point de vue là ce n'est plus la fin d'un plan décidé ailleurs mais le point de départ d'un savoir et d'un attachement. Le premier kilomètre, c'est l'espace vécu pris comme origine de l'enquête, pas comme extrémité d'un réseau.
 
@@ -31,7 +31,7 @@ Et ouvrir une enquête au premier kilomètre c'est commencer par là.
 
 ## Ce que c'est : de quoi informe cette page-matrice
 
-Cette page-matrice informe sur le geste lui-même : celui de l'ouverture d'une enquête située et d'un espace de conversations autour d'une question adressée au lieu où l'on habite : ce qu'il sait déjà et ce à quoi il tient.
+Cette page-matrice informe sur le geste lui-même : celui de l'ouverture d'une enquête située et d'un espace de conversations autour d'une question adressée au lieu où l'on habite : que sait-il déjà et à quoi tient-il, a-t-il les moyens de sa politique, quelles sont les ressources et les capacités des organisations et des institutions de ses collectivités,… ?[^ingenierie]
 
 Un geste, pas un territoire. Pas un réseau constitué ni une parole collective : une hypothèse de milieu qui s'ouvre et cherche à se reconnaître.
 
@@ -58,6 +58,18 @@ Au niveau du geste, les interrogatifs ne décrivent pas un lieu : ils décrivent
 
 Ne pas faire parler ce qui n'existe pas encore. Un territoire générique ne sait rien : seul un lieu habité sait ce qu'il sait. C'est pourquoi cette matrice ne parle jamais à la place d'un premier kilomètre : elle dit seulement comment l'ouvrir. Tenir l'information vraie, datée, corrigible.
 
+## Questions ouvertes
+
+La matrice ne tranche pas tout. Ce qu'elle laisse ouvert, elle le pose plutôt que de le masquer :
+
+- Qui trace la frontière du premier kilomètre, et selon quoi ? Le kilomètre est-il métrique, marchable, relationnel ? La matrice ne le dit pas, et c'est peut-être bien ainsi. À décider si ce silence est une lacune ou une clause de reprise.
+- Paradoxe du générique : la matrice est-elle exemptée de sa propre règle, et à quel titre ?
+- Comment un deuxième cas s'ouvre-t-il sans devenir une copie du premier ? Qu'est-ce qui prouverait que la matrice est reprenable ?
+- À quel moment une enquête cesse-t-elle d'être « en son nom » ? Qui date ce passage, et sur quelle page ?
+- La clause IA suppose une source consultable. Que devient la référence si la source cesse d'être tenue ? Le CC BY-SA règle le droit, pas la persistance.
+- « Ne pas faire parler » et « recueillir des conversations » : où passe la ligne entre recueillir une parole et la faire parler ?
+- Statut des interlocuteurs : co-participants d'un milieu ou matériau d'enquête ?
+
 ## Un mot sur l'IA
 
 Si un moteur de recherche ou une IA répond sur une enquête ouverte selon cette matrice, revenir vérifier à la source que tient l'habitant-chercheur·e. Une IA peut recomposer un récit crédible mais inexact ; ce qui est écrit et daté à la source est la référence.
@@ -75,6 +87,8 @@ Cette matrice est née d'un [premier cas](/billets/ouverture-lisiere-sud-berry-c
 [^dewey]: John Dewey, *Le Public et ses problèmes* (1927). La formule dit que l'expérience partagée suppose des signes et symboles communs : c'est la justification du geste documentaire, qui fabrique ces signes.
 
 [^enquete]: Enquête au sens de Dewey : non pas collecte d'informations, mais processus par lequel une situation indéterminée est reprise et transformée en situation dont on peut parler ensemble.
+
+[^ingenierie]: « L'ingénierie territoriale à l'épreuve des transitions territoriales », Encyclopédie Wikiterritorial du CNFPT : <https://encyclopedie.wikiterritorial.cnfpt.fr/xwiki/bin/view/fiches/Lingenierieterritorialealepreuvedestransitionsterritoriales/>
 
 [^sauvy]: D'après Alfred Sauvy : « Bien informé, l'homme est un citoyen. Mal informé, il devient un sujet. »
 
