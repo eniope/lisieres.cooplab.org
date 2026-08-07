@@ -1,0 +1,259 @@
+{
+  "title": {
+    "text": {
+      "headline": "La vie associative de l'ADAR (1982-2026)",
+      "text": "<p><b>Une communauté apprenante avant l'heure.</b> Ce que le Sud Berry sait déjà faire, et qu'un <b>PNR-TICA</b> (Territoires Intelligents / Communautés Apprenantes, T. Nghiem) pourrait fédérer.</p><p><b>Comment lire.</b> Deux échelles en tension : la <b>Grande histoire</b> (politiques nationales, régimes, grandes références) et les <b>petites histoires locales</b> (l'ADAR concrète). En fond, les <i>régimes info-communicationnels</i>, le versant <b>« territoire intelligent »</b> (TI) qui change d'époque en époque. Une couche <b>« Apprendre dans l'action »</b> pose sur les phases les cinq questions de l'évaluation développementale. Enjeux sous-tendus à chaque pas : <i>émancipation</i> ⇄ <i>captation</i>.</p><p><b>Horizon.</b> Le PNR Sud Berry, en relance en 2026. Pour l'essentiel de son histoire (1982-2011), l'ADAR n'a pas travaillé <i>vers</i> le Parc : <b>préfiguration involontaire</b>. Mais dès 2016, au Conseil de développement, le sujet d'une Maison du Parc est travaillé explicitement, une amorce intentionnelle, récente, dans cette longue préfiguration. Elle est la preuve vivante que ce territoire apprend dans l'action depuis 1982.</p><p>Source primaire : <i>Historique ADAR-CIVAM 1984-2012</i>, J.-C. Moreau (rapport S. Cordellier, validé par le CA le 19/12/2011). Cadres de lecture : guide <i>Apprendre dans l'action, 5 questions</i> (Avenir d'enfants / L'ILOT, Québec) ; TICA (T. Nghiem, <i>Des abeilles et des hommes</i>) ; faire récit (B. Roux).</p><p><small>CC BY-SA. Lecture de passeur (horizon CARe/PNR), pas d'historien. Régimes, enjeux et grille des 5 questions sont des hypothèses de lecture, à frotter avec JC.</small></p>"
+    }
+  },
+  "eras": [
+    { "start_date": { "year": "1978" }, "end_date": { "year": "1982" }, "text": { "headline": "Imprimé & pré-informatique grand public (TI)" } },
+    { "start_date": { "year": "1982" }, "end_date": { "year": "1994" }, "text": { "headline": "Micro-informatique & Minitel, pré-internet (TI)" } },
+    { "start_date": { "year": "1994" }, "end_date": { "year": "2004" }, "text": { "headline": "Web grand public (TI)" } },
+    { "start_date": { "year": "2004" }, "end_date": { "year": "2015" }, "text": { "headline": "Web 2.0, Wikipédia, réseaux sociaux (TI)" } },
+    { "start_date": { "year": "2015" }, "end_date": { "year": "2026" }, "text": { "headline": "Numérique & IA, fait social total (TI)" } }
+  ],
+  "events": [
+
+    {
+      "start_date": { "year": "1982", "month": "10" },
+      "group": "Grande histoire",
+      "text": {
+        "headline": "États généraux du développement agricole (Cresson)",
+        "text": "<p>Consultation nationale lancée par la ministre Édith Cresson. Première femme ministre de l'agriculture, elle essuie remarques sexistes et colère : en 1982, dans le Calvados, des agriculteurs la bloquent, lui jettent œufs pourris et mottes de terre ; un hélicoptère l'évacue. Échec politique national, mais dans le Boischaut Sud, une brèche s'ouvre.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "1992" },
+      "group": "Grande histoire",
+      "text": {
+        "headline": "Réforme de la PAC, les jachères",
+        "text": "<p>« Pourquoi aider à restructurer si on laisse des terres en jachère ? » La réforme douche l'action foncière locale. La grande histoire agricole redistribue les cartes du petit territoire.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2010" },
+      "group": "Grande histoire",
+      "text": {
+        "headline": "Le mot « développement » mue en « durable », puis « transition »",
+        "text": "<p>Du développement agricole (1982) au rural, puis au <i>durable</i> (années 2000) et à la « transition » (années 2010). L'invariant n'est pas que l'ADAR suive le mouvement : c'est qu'elle ré-apprend sans cesse ce que le mot veut dire, souvent en <i>pratiquant</i> avant que le vocabulaire national ne la nomme. Le mouvement des « villes en transition » (R. Hopkins) n'arrive en France que vers 2009 (<i>Revue Silence</i>, « Villes en transition, bientôt en France ») ; le débat « <a href='https://shs.cairn.info/revue-mouvements-2013-3-page-7?lang=fr' target='_blank'>La transition, une utopie concrète ?</a> » date de 2013.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2014" },
+      "group": "Grande histoire",
+      "text": {
+        "headline": "✦ Émancipation, « chacun documentaliste » (P. Lévy)",
+        "text": "<p>Pierre Lévy : « à l'ère du numérique, chacun est appelé à devenir documentaliste, pour lui-même et pour les autres », une mémoire construite en commun, dans une vision d'intelligence collective.</p><p>Entretien avec Julien Lecomte, <a href='https://www.philomedia.be/medias-culture-et-cognition-entretien-avec-le-philosophe-pierre-levy/' target='_blank'>Philomedia</a>. <small><b>Enjeu : émancipation.</b></small></p>"
+      },
+      "media": {
+        "url": "https://www.philomedia.be/wp-content/uploads/2014/08/Pierre-Levy-150x150.jpg",
+        "link": "https://www.philomedia.be/medias-culture-et-cognition-entretien-avec-le-philosophe-pierre-levy/",
+        "caption": "Pierre Lévy",
+        "credit": "philomedia.be"
+      }
+    },
+    {
+      "start_date": { "year": "2015" },
+      "group": "Grande histoire",
+      "text": {
+        "headline": "Fing : « la transition numérique est fragile et récente »",
+        "text": "<p>Le cahier <i>Questions Numériques, Transitions</i> (Fing, dir. Kaplan & Marchandise) prévient : la notion de transition est récente. La Fing met en avant cette formule : <b>« La transition écologique sait où elle veut aller, mais ne sait pas comment ; la transition numérique sait comment faire, mais ne sait pas où elle va. »</b> Garde-fou utile contre le récit de progrès. Son mot d'ordre, « devenir acteurs ou auteurs plutôt que subir », c'est l'axe émancipation reformulé.</p><p><a href='https://fing.org/publications/cahier-questions-numeriques-transitions.html' target='_blank'>fing.org</a> · <a href='https://www.hiscox.fr/blog/startup-debrief' target='_blank'>formule citée ici</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2023" },
+      "group": "Grande histoire",
+      "text": {
+        "headline": "⛓ Captation, Calculating Empires (Crawford & Joler)",
+        "text": "<p>Une généalogie de la technologie et du pouvoir depuis 1500 : extraction, énergie, opacité, dépendance. Le numérique comme <b>fait social total</b>, ignoré comme tel.</p><p><a href='https://calculatingempires.net' target='_blank'>calculatingempires.net</a> · <a href='https://knowingmachines.org/publications/calculating-empires' target='_blank'>knowingmachines.org</a>. <small><b>Enjeu : captation.</b></small></p>"
+      },
+      "media": {
+        "url": "https://calculatingempires.net/content/about/about_Intro@2x.png",
+        "link": "https://calculatingempires.net",
+        "caption": "Calculating Empires, K. Crawford & V. Joler (2023)",
+        "credit": "calculatingempires.net"
+      }
+    },
+
+    {
+      "start_date": { "year": "1983" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Les trois commissions",
+        "text": "<p>Élevage, foncier, rural. ~90 personnes. C'est de l'exception non-agricole que sortira le premier président. « Écrire pour Paris et écrire pour ici. »</p>"
+      }
+    },
+    {
+      "start_date": { "year": "1984", "month": "12", "day": "15" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "AG constitutive de l'ADAR",
+        "text": "<p>Statuts adoptés, trois collèges. Président : Michel Laming. Secrétaire : Jean-Claude Moreau. La configuration « professionnelle » des États généraux est dépassée.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "1985", "month": "11", "day": "30" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "J.-C. Moreau élu président",
+        "text": "<p>Après la démission de Laming (fatigue, « réunionite », primauté du foncier sur le rural). Laming reste vice-président « pour produire le Radar ».</p>"
+      }
+    },
+    {
+      "start_date": { "year": "1985" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "RADAR, le bulletin",
+        "text": "<p>La trace papier comme continuité du « rural ». <small><b>Enjeu : émancipation</b>, écrire pour ici, rendre compte pour soi.</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1987" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Concours vidéo amateur (idée de Laming)",
+        "text": "<p>Des habitants filment eux-mêmes leur pays. Journalisme citoyen documentaire avant l'heure. <small><b>Enjeu : émancipation.</b></small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1987" },
+      "end_date": { "year": "1993" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Période « foncier »",
+        "text": "<p>Cartes communales, coloriage du parcellaire par les exploitants, échanges amiables. Professionnalisation avec Ph. Pasquier.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "1993" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Concours vidéo, 3ᵉ édition, la cassette VHS",
+        "text": "<p>Diapo fondu-enchaîné + films magnétoscope ; une cassette VHS est produite. <small><b>Enjeu : captation</b>, cette VHS est aujourd'hui quasi illisible : la trace meurt avec son support.</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1996" },
+      "end_date": { "year": "2001" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "« Il y a des producteurs fermiers dans ce pays ! »",
+        "text": "<p>Virage produits fermiers et image du Pays (L. Masseron). Le local devient levier de développement.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2000" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Adhésion au réseau CIVAM → ADAR-CIVAM",
+        "text": "<p>Sortie de l'isolement : accès à la formation, aux référentiels, aux financements. L'indépendance se doublait d'une fragilité.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2002" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "« Le panier berrichon »",
+        "text": "<p>Coffret de produits fermiers : image du Pays et objet concret identifiant l'ADAR elle-même.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2007", "month": "12", "day": "20" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Ouverture du site adar.civam.fr",
+        "text": "<p>Construit bénévolement par Mélanie Cristol. L'ADAR entre dans le web. <small><b>Enjeux : émancipation</b> (publier sans intermédiaire) <b>/ captation</b> (dépendance à l'hébergeur, liens qui meurent).</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2009", "month": "04" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "Agrément « Jeunesse et Éducation populaire »",
+        "text": "<p>Changement de statuts ; la limite d'âge d'administrateur passe de 18 à 16 ans. L'ADAR s'assume comme milieu d'éducation populaire.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2011", "month": "12", "day": "19" },
+      "group": "Petites histoires locales",
+      "text": {
+        "headline": "DLA & rapport Serge Cordellier, l'historique",
+        "text": "<p>Le DLA préconise d'écrire l'histoire de l'ADAR ; rapport confié à Serge Cordellier, validé par le CA le 19/12/2011. C'est la source primaire de cette frise. L'exigence sans fin de Cordellier, jusqu'au « stop » de JC.</p>"
+      }
+    },
+
+    {
+      "start_date": { "year": "1984" },
+      "group": "Apprendre dans l'action (5 questions)",
+      "text": {
+        "headline": "Q1 : Quel changement voulons-nous provoquer ensemble ?",
+        "text": "<p>Les commissions tranchent trois priorités : élevage, foncier, rural. Le collectif nomme le changement qu'il veut pour le pays, et, en écho à toute notre enquête : <b>que voulons-nous rendre possible ensemble ?</b></p><p><small><b>Question 1</b> du parcours « Apprendre dans l'action : 5 questions simples pour plus d'impact », un parcours qui vise à outiller les organisations et les regroupements de partenaires qui souhaitent augmenter leur impact collectif, apprendre dans l'action et mieux communiquer leurs succès et leurs apprentissages.</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1986" },
+      "group": "Apprendre dans l'action (5 questions)",
+      "text": {
+        "headline": "Q2 : Comment, concrètement ?",
+        "text": "<p>Animateurs salariés, cartes communales, RADAR, pool audiovisuel prêté aux associations : les moyens concrets du changement. <small><b>Question 2</b> du guide « Apprendre dans l'action ».</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1996" },
+      "group": "Apprendre dans l'action (5 questions)",
+      "text": {
+        "headline": "Q3 : Qu'observer / apprendre pour nous guider ?",
+        "text": "<p>Enquêtes producteurs fermiers, stages étudiants, « du qualitatif, pas du quantitatif ». Le collectif apprend du terrain pour s'orienter. <small><b>Question 3</b> du guide « Apprendre dans l'action ».</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2003" },
+      "group": "Apprendre dans l'action (5 questions)",
+      "text": {
+        "headline": "Q4 : Sommes-nous toujours sur la bonne voie ?",
+        "text": "<p>Audit AFIPAR, adhésion CIVAM, évaluation à mi-parcours de Leader+. La réflexivité s'institue, l'évaluation devient un milieu, pas un contrôle. <small><b>Question 4</b> du guide « Apprendre dans l'action ». Cœur de la thèse.</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2011" },
+      "group": "Apprendre dans l'action (5 questions)",
+      "text": {
+        "headline": "Q5 : Comment faire vivre nos apprentissages ?",
+        "text": "<p>L'historique écrit par JC : <b>faire récit</b> (B. Roux) plutôt que storytelling. RADAR, concours vidéo, site : la mémoire tenue vivante. <small><b>Question 5</b> du guide « Apprendre dans l'action ».</small></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2026", "month": "08" },
+      "group": "Apprendre dans l'action (5 questions)",
+      "text": {
+        "headline": "Q5 aujourd'hui : documenter depuis nos vies quotidiennes",
+        "text": "<p>La compétence peut être distribuée dans la lisière, pas concentrée dans une tête. Second cerveau ; RAG, <i>Retrieval-Augmented Generation</i> : l'IA répond à partir de tes propres fiches. Cette frise elle-même est un geste de Question 5.</p><p>À lire : Arthur Perret, <a href='https://www.arthurperret.fr/blog/2022-05-20-et-toi-qu-est-ce-que-tu-fiches.html' target='_blank'>« Et toi, qu'est-ce que tu fiches ? »</a></p>"
+      }
+    },
+
+    {
+      "start_date": { "year": "2016" },
+      "group": "Vers le PNR-TICA",
+      "text": {
+        "headline": "Réflexion « Maison du Parc », Conseil de développement",
+        "text": "<p>Vers 2016, le sujet d'une <b>Maison du Parc</b> et d'un projet de Parc est travaillé explicitement dans l'orbite associative, au Conseil de développement du Pays de La Châtre-en-Berry. Un désir de territoire déjà formulé, que JC propose aujourd'hui de réactiver.</p><p><a href='https://www.pays-lachatre-berry.com/bibliotheque/bibliotheque-download.php?fichier=/up/bibliotheque/conseil-dev/CDdec2016.pdf' target='_blank'>Conseil de développement, déc. 2016</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2026", "month": "06" },
+      "group": "Vers le PNR-TICA",
+      "text": {
+        "headline": "Tribune « Prendre soin du territoire »",
+        "text": "<p>Dans la relance du PNR Sud Berry : un Parc non comme périmètre administratif mais comme <b>infrastructure civique du prendre soin</b>, repérer les vulnérabilités, reconnaître les savoirs d'usage, soutenir tiers-lieux et réseaux d'entraide.</p>"
+      }
+    },
+    {
+      "start_date": { "year": "2026", "month": "08" },
+      "group": "Vers le PNR-TICA",
+      "text": {
+        "headline": "Relance du PNR, JC propose de réactiver la « maison du Parc »",
+        "text": "<p>Sous le tilleul, JC propose de réactiver la réflexion « Maison du Parc » (2016) dans l'actualité de la relance. Sur le long terme l'ADAR n'a pas préparé le Parc, mais le Sud Berry <b>sait déjà faire communauté apprenante</b>, et l'a même formulé dès 2016. Un PNR-TICA fédérerait ce capital plutôt qu'il ne le fonderait. Préfiguration devenue amorce.</p>"
+      }
+    }
+  ]
+}

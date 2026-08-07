@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'ADAR et ses traces, Conversations en lisières</title>
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  <style>
+    body { margin: 0; font-family: Georgia, serif; background: #f9f6f0; }
+    #header { padding: 1.2rem 2rem 0.8rem; background: #f9f6f0; border-bottom: 1px solid #ddd; }
+    #header h1 { margin: 0 0 0.2rem; font-size: 1.3rem; color: #2c2c2c; }
+    #header p  { margin: 0; font-size: 0.85rem; color: #666; }
+    .badge { display: inline-block; margin-top: 0.4rem; padding: 0.15rem 0.6rem; background: #e8e0d5; border-radius: 3px; font-size: 0.75rem; color: #555; }
+    #timeline-embed { width: 100%; height: calc(100vh - 104px); }
+    #fallback { display: none; padding: 2.5rem 3rem; max-width: 540px; margin: 0 auto; }
+    #fallback p { margin-bottom: 0.9rem; line-height: 1.6; }
+    #fallback code { background: #ede8df; padding: 1px 5px; border-radius: 2px; }
+    #fallback hr { border: none; border-top: 1px solid #ddd; margin: 1.2rem 0; }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <h1>L'ADAR et ses traces</h1>
+  <p>Une enquête citoyenne (1982 → aujourd'hui) sous des régimes info-communicationnels changeants, émancipation / captation</p>
+  <span class="badge">Source primaire : historique ADAR-CIVAM 1984-2012, J.-C. Moreau</span>
+  <span class="badge" style="background:#fde8d8;">Gabarit vivant, CC BY-SA</span>
+</div>
+
+<div id="timeline-embed"></div>
+
+<div id="fallback">
+  <p style="font-size:1.05rem;color:#333">⚠ Le fichier <code>timeline-adar-infocom.json</code> ne peut pas être chargé depuis le disque directement.</p>
+  <p><strong>Option A</strong> : double-cliquez sur <code>lancer-timeline.bat</code> : lance un mini-serveur local et ouvre la frise automatiquement.</p>
+  <hr>
+  <p><strong>Option B</strong> : chargez le JSON manuellement :</p>
+  <input type="file" id="json-fallback" accept=".json" style="font-family:Georgia,serif;font-size:0.9rem;cursor:pointer">
+</div>
+
+<script>
+// Le JSON est déjà au format natif Knightlab TimelineJS : aucune conversion nécessaire.
+function initTimeline(jsonData) {
+  document.getElementById('fallback').style.display = 'none';
+  document.getElementById('timeline-embed').style.display = 'block';
+  try {
+    window.TLInstance = new TL.Timeline('timeline-embed', jsonData, {
+      language: 'fr',
+      timenav_height_percentage: 32,
+      hash_bookmark: true,
+      initial_zoom: 2
+    });
+  } catch(err) {
+    document.getElementById('timeline-embed').innerHTML =
+      '<p style="padding:2rem;color:#c00">Erreur Knightlab : ' + err.message + '</p>';
+  }
+}
+
+function start() {
+  fetch('timeline-adar-infocom.json')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){ initTimeline(data); })
+    .catch(function(){
+      document.getElementById('timeline-embed').style.display = 'none';
+      document.getElementById('fallback').style.display = 'block';
+      document.getElementById('json-fallback').addEventListener('change', function(e){
+        var file = e.target.files[0]; if(!file) return;
+        var reader = new FileReader();
+        reader.onload = function(ev){
+          try { initTimeline(JSON.parse(ev.target.result)); }
+          catch(err){ alert('JSON invalide : ' + err.message); }
+        };
+        reader.readAsText(file);
+      });
+    });
+}
+</script>
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js" onload="start()"></script>
+</body>
+</html>
