@@ -33,15 +33,13 @@ export const sharedPageComponents: SharedLayout = {
 
   footer: Component.Footer({
     links: {
-      "cooplab.org": "https://cooplab.org",
-      "these": "https://these.cooplab.org",
       "CC BY-SA": "https://creativecommons.org/licenses/by-sa/4.0/",
     },
   }),
 }
 
 // =================================================
-// LAYOUT — PAGE DE CONTENU
+// LAYOUT - PAGE DE CONTENU
 // =================================================
 
 export const defaultContentPageLayout: PageLayout = {
@@ -80,7 +78,7 @@ export const defaultContentPageLayout: PageLayout = {
 }
 
 // =================================================
-// LAYOUT — PAGE LISTE
+// LAYOUT - PAGE LISTE
 // =================================================
 
 export const defaultListPageLayout: PageLayout = {
