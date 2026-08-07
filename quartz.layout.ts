@@ -18,6 +18,15 @@ const graphConfig = {
   },
 }
 
+// Nom court dans l'explorateur : si une note definit `sidebarTitle` dans son
+// frontmatter, il remplace le titre (long) uniquement dans la barre laterale.
+const explorerMapFn = (node: any) => {
+  const st = node.file?.frontmatter?.sidebarTitle
+  if (typeof st === "string" && st.length > 0) {
+    node.displayName = st
+  }
+}
+
 // =================================================
 // SHARED COMPONENTS
 // =================================================
@@ -60,6 +69,7 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Explorer({
         folderClickBehavior: "link",
         filterFn: (node) => node.name !== "templates",
+        mapFn: explorerMapFn,
       })
     ),
   ],
@@ -69,6 +79,7 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Explorer({
         folderClickBehavior: "link",
         filterFn: (node) => node.name !== "templates",
+        mapFn: explorerMapFn,
       })
     ),
     Component.DesktopOnly(Component.Graph(graphConfig)),
@@ -98,6 +109,7 @@ export const defaultListPageLayout: PageLayout = {
       Component.Explorer({
         folderClickBehavior: "link",
         filterFn: (node) => node.name !== "templates",
+        mapFn: explorerMapFn,
       })
     ),
   ],
@@ -107,6 +119,7 @@ export const defaultListPageLayout: PageLayout = {
       Component.Explorer({
         folderClickBehavior: "link",
         filterFn: (node) => node.name !== "templates",
+        mapFn: explorerMapFn,
       })
     ),
     Component.DesktopOnly(Component.Graph(graphConfig)),

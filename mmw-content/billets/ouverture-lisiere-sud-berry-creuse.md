@@ -1,5 +1,6 @@
 ---
 title: "Ah si la lisière Sud-Berry/Creuse savait ce qu'elle sait déjà et ce à quoi elle tient"
+sidebarTitle: "lisière Sud-Berry/Creuse"
 subtitle: "Lisières : enquêtes et conversations entre Sud-Berry et Creuse"
 date: 2026-08-06
 auteur: Stéphane Caillaud
