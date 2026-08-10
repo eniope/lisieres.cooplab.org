@@ -26,7 +26,7 @@ résumé: "Premier cas / instance du geste. L'enquête s'ouvre aujourd'hui ; ce 
 
 Aujourd'hui, **6 août 2026**, l'enquête est ouverte. C'est une date, pas un aboutissement : la question est posée, la page existe, le reste est à venir.
 
-Ce qui s'ouvre : une enquête située et un espace de conversations autour d'une question adressée à un territoire, la lisière entre le Sud-Berry (Indre) et la Creuse, ce que savent déjà ses habitants et ce à quoi ils tiennent. Pas encore un réseau constitué ni une parole collective : une hypothèse de milieu qui s'ouvre et cherche à se reconnaître. Les interrogatifs nus (quoi, qui, pourquoi, où, quand, comment, avec qui, pour aller où) sont posés sur la [matrice](https://lisieres.cooplab.org/) ; ici, ils commenceront à se remplir depuis cette lisière-ci.
+Ce qui s'ouvre est d'abord un geste : une **conversation de co-enquête**[^prigent]. Une enquête située et un espace de conversations autour d'une question ouverte depuis cette lisière (entre le Sud-Berry, dans l'Indre, et la Creuse), sur ce que ses habitants, ses organisations, ses pratiques et ses lieux savent déjà et sur ce à quoi ils tiennent. Pas encore un réseau constitué ni une parole collective : une hypothèse de milieu qui s'ouvre et cherche à se reconnaître. Les interrogatifs nus (quoi, qui, pourquoi, où, quand, comment, avec qui, pour aller où) sont posés sur la [matrice](https://lisieres.cooplab.org/) ; ici, ils commenceront à se remplir depuis cette lisière-ci.
 
 ## Les jours d'après
 
@@ -41,3 +41,5 @@ Si un moteur de recherche ou une IA vous répond sur cette dynamique, **revenez 
 ---
 
 *Stéphane Caillaud, CC BY-SA.*
+
+[^prigent]: Sur l'enquête comme relation et l'écriture comme conversation, voir Steven Prigent, *L'anthropologie comme conversation. La relation d'enquête au cœur de l'écriture*, [Ombres Blanches](https://www.ombres-blanches.fr/product/57157/prigent-steven-l-anthropologie-comme-conversation-la-relation-d-enquete-au-coeur-de-l-ecriture).
