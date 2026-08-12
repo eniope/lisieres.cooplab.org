@@ -16,82 +16,126 @@ résumé: "Page d'accueil / page-mère du genre d'enquête ouvert le 6 août 202
 
 # Ouvrir une enquête au premier kilomètre
 
-*Une matrice pour ouvrir, là où l'on habite, une enquête située, réutilisable par quiconque enquête depuis sa position.*
+*Une matrice pour ouvrir, depuis là où l'on habite, une enquête située. Une matrice réutilisable par quiconque souhaite enquêter depuis sa propre position.*
 
 > [!info] État
-> **Matrice / page-mère.** Ouverte le **6 août 2026** avec son [premier cas](/billets/ouverture-lisiere-sud-berry-creuse) Sud-Berry/Creuse. Décrit un geste, non un lieu : ce qui se transmet est une posture et un protocole, pas un contenu.
+> **Matrice / page-mère.** Ouverte le **6 août 2026** avec son [premier cas](https://lisieres.cooplab.org/billets/ouverture-lisiere-sud-berry-creuse), en Sud-Berry/Creuse. Cette matrice décrit un geste, non un lieu : ce qui se transmet est une posture et un protocole, pas un contenu.
 
 ## Premier kilomètre
 
-En logistique, en télécoms, puis en aménagement du territoire, on parle du **dernier kilomètre** : le bout de réseau où le service finit par arriver. Et souvent mal en milieu rural depuis un centre qui décide ailleurs. Vu du réseau, le lieu habité est vu comme un terminus et la queue d'un plan.
+En logistique, dans les télécommunications puis en aménagement du territoire, on parle du **dernier kilomètre** : le bout du réseau où le service finit par arriver. En milieu rural, ce service arrive souvent mal, depuis un centre de décision situé ailleurs. Vu depuis le réseau, le lieu habité apparaît comme un terminus, la queue d'un plan.
 
-Renversons la focale. Depuis là où l'on vit, ce même kilomètre n'est pas le dernier : c'est **le premier**. De ce point de vue là ce n'est plus la fin d'un plan décidé ailleurs mais le point de départ d'un savoir et d'un attachement. Le premier kilomètre, c'est l'espace vécu pris comme origine de l'enquête, pas comme extrémité d'un réseau.
+Renversons la focale.
 
-Et ouvrir une enquête au premier kilomètre c'est commencer par là.
+Depuis là où l'on vit, ce même kilomètre n'est pas le dernier : c'est **le premier**. De ce point de vue-là, ce n'est plus la fin d'un plan décidé ailleurs, mais le point de départ d'un savoir et d'un attachement.
 
-## Ce que c'est : de quoi informe cette page-matrice
+Le premier kilomètre, c'est l'espace vécu pris comme point d'origine de l'enquête, et non comme extrémité d'un réseau.
 
-Cette page-matrice informe sur le geste lui-même : celui de l'ouverture d'une enquête située et d'un espace de conversations autour d'une question adressée au lieu où l'on habite : que sait-il déjà et à quoi tient-il, a-t-il les moyens de sa politique, quelles sont les ressources et les capacités des organisations et des institutions de ses collectivités,… ?[^ingenierie]
+Ouvrir une enquête au premier kilomètre, c'est commencer par là.
 
-Un geste, pas un territoire. Pas un réseau constitué ni une parole collective : une hypothèse de milieu qui s'ouvre et cherche à se reconnaître.
+## Ce que fait cette page-matrice
 
-Ce qui cherche à être transmis ici sur cette page, ce n'est pas un contenu (chaque premier kilomètre a le sien) mais une **posture** et un **protocole** : recueillir, relier, dater, publier de première main.
+Cette page-matrice décrit le geste lui-même : ouvrir une enquête située et un espace de conversations à partir du lieu où l'on habite.
 
-> « Notre Babel n'est pas de langues mais de signes et de symboles ; sans ceux-ci une expérience partagée est impossible. » (John Dewey)[^dewey]
+Elle permet d'adresser à ce lieu des questions telles que : que sait-il déjà ? À quoi tient-il ? A-t-il les moyens de sa politique ? Quelles ressources et quelles capacités possèdent les organisations et les institutions de ses collectivités ?[^ingenierie]
 
-C'est là ce que fait la page datée : elle fabrique le signe partagé sans lequel il n'y a pas d'expérience commune. Publier de première main, dater, corriger, ce n'est pas de l'archivage, c'est la condition pour qu'une enquête[^enquete] puisse se partager.
+Un geste, pas un territoire.
+
+Ce n'est encore ni un réseau constitué ni une parole collective. C'est une hypothèse de milieu : quelque chose s'ouvre et cherche à se reconnaître.
+
+Ce qui cherche à être transmis ici n'est pas un contenu (chaque premier kilomètre a le sien), mais une **posture** et un **protocole** : recueillir, relier, dater et publier de première main.
+
+> « Notre Babel n'est pas de langues mais de signes et de symboles ; sans ceux-ci une expérience partagée est impossible. »
+> — John Dewey[^dewey]
+
+La page datée contribue ainsi à fabriquer des signes partageables, sans lesquels une expérience commune ne peut se construire.
+
+Publier de première main, dater et corriger ne relèvent donc pas seulement de l'archivage : ce sont des conditions pour qu'une enquête puisse se partager.[^enquete]
 
 ## Les interrogatifs nus
 
-Au niveau du geste, les interrogatifs ne décrivent pas un lieu : ils décrivent une manière d'ouvrir. À remplir depuis sa propre position.
+Ici, les interrogatifs ne servent pas à décrire un lieu. Ils décrivent une manière d'ouvrir l'enquête. Chacun peut les reprendre depuis sa propre position.
 
-- **Quoi ?** Rendre visible et partageable ce que [mon premier kilomètre] sait déjà et ce à quoi il tient, par une pratique documentaire située qui recueille, relie, date et publie de première main.
-- **Qui ?** Un·e habitant-chercheur·e qui enquête depuis sa position, en son nom (pas au nom d'un collectif qui n'existe pas encore à la date d'écriture de cette page).
-- **Pourquoi ?** Parce qu'un individu bien informé est un citoyen ; mal informé, c'est un sujet[^sauvy]. Réduire l'incertitude par une information située et vérifiable, pour que chacun·e puisse contribuer plutôt que subir.
+- **Quoi ?** Rendre visible et partageable ce que [mon premier kilomètre] sait déjà et ce à quoi il tient, au moyen d'une pratique documentaire située : recueillir, relier, dater et publier de première main.
+- **Qui ?** Un·e habitant-chercheur·e qui enquête depuis sa position et en son nom, et non au nom d'un collectif qui, à cette date, n'existe pas encore.
+- **Pourquoi ?** Parce que l'information conditionne la possibilité d'agir en citoyen.[^sauvy] Il s'agit de réduire l'incertitude par une information située et vérifiable, afin que chacun·e puisse contribuer plutôt que subir.
 - **Où ?** Le premier kilomètre : l'espace vécu, là où l'on se tient.
-- **Quand ?** À partir du jour où on l'ouvre, et daté ensuite. On ne réécrit pas ce qui a été, mais le retour rétrospectif peut éclairer l'enquête : le passé revisité fait partie du matériau, pourvu qu'il soit signalé comme tel et daté à son tour.
-- **Comment ?** Par des conversations situées, tout daté, corrigé quand il le faut ; une page qui reste la source de référence contre les récits recomposés.
-- **Avec qui ?** Les mondes hétérogènes du lieu ; des alliances mutuellement capacitantes, des compagnonnages[^compagnonnage] (co-construire, non recruter).
-- **Pour aller où / à quelles conditions ?** Vers un milieu qui apprend de lui-même, à condition de ne pas faire parler, ni engager dans des voies piégeuses[^stengers], un collectif qui n'existe pas encore, et de tenir l'information vraie.
+- **Quand ?** À partir du jour où l'enquête est ouverte. Les différentes étapes sont ensuite datées. On ne réécrit pas ce qui a été ; en revanche, un retour rétrospectif peut éclairer l'enquête. Le passé revisité peut donc faire partie du matériau, à condition d'être signalé comme rétrospectif et daté à son tour.
+- **Comment ?** Par des conversations situées et des traces documentaires datées. Ce qui doit être corrigé l'est, sans effacer les états antérieurs lorsque ceux-ci comptent pour comprendre l'enquête. La page tenue reste la source de référence face aux récits recomposés.
+- **Avec qui ?** Avec les mondes hétérogènes du lieu, dans des alliances mutuellement capacitantes et des compagnonnages[^compagnonnage] : co-construire, plutôt que recruter.
+- **Pour aller où / à quelles conditions ?** Vers un milieu qui apprend de lui-même. À deux conditions au moins : ne pas faire parler un collectif qui n'existe pas encore ; ne pas l'engager, par anticipation, dans des voies piégeuses.[^stengers] Et tenir une information vraie, datée et corrigible.
 
 ## La règle qui tient
 
-Ne pas faire parler ce qui n'existe pas encore. Un territoire générique ne sait rien : seul un lieu habité sait ce qu'il sait. C'est pourquoi cette matrice ne parle jamais à la place d'un premier kilomètre : elle dit seulement comment l'ouvrir. Tenir l'information vraie, datée, corrigible.
+Ne pas faire parler ce qui n'existe pas encore.
+
+Un territoire générique ne sait rien : seul un lieu habité sait ce qu'il sait.
+
+C'est pourquoi cette matrice ne parle jamais à la place d'un premier kilomètre. Elle dit seulement comment ouvrir une enquête depuis lui.
+
+Tenir l'information vraie, datée, corrigible.
 
 ## Questions ouvertes
 
-La matrice ne tranche pas tout. Ce qu'elle laisse ouvert, elle le pose plutôt que de le masquer :
+La matrice ne tranche pas tout. Ce qu'elle laisse ouvert, elle le pose plutôt que de le masquer.
 
-- Qui trace la frontière du premier kilomètre, et selon quoi ? Le kilomètre est-il métrique, marchable, relationnel ? La matrice ne le dit pas, et c'est peut-être bien ainsi. À décider si ce silence est une lacune ou une clause de reprise.
-- Paradoxe du générique : la matrice est-elle exemptée de sa propre règle, et à quel titre ?
-- Comment un deuxième cas s'ouvre-t-il sans devenir une copie du premier ? Qu'est-ce qui prouverait que la matrice est reprenable ?
-- À quel moment une enquête cesse-t-elle d'être « en son nom » ? Qui date ce passage, et sur quelle page ?
-- La clause IA suppose une source consultable. Que devient la référence si la source cesse d'être tenue ? Le CC BY-SA règle le droit, pas la persistance.
-- « Ne pas faire parler » et « recueillir des conversations » : où passe la ligne entre recueillir une parole et la faire parler ?
-- Statut des interlocuteurs : co-participants d'un milieu ou matériau d'enquête ?
+**Où commence et où finit le premier kilomètre ?**
+Qui trace sa frontière, et selon quels critères ? Le kilomètre est-il métrique, marchable, relationnel, ou plusieurs de ces choses à la fois ? La matrice ne le décide pas. Ce silence reste lui-même à interroger : est-ce une lacune ou une clause de reprise, laissant chaque enquête décider depuis sa situation ?
+
+**Le paradoxe du générique**
+La matrice énonce qu'un territoire générique ne sait rien et qu'une enquête doit partir d'une position située. Mais une matrice destinée à être reprise par d'autres ne produit-elle pas elle-même une forme de générique ? Est-elle exemptée de sa propre règle ? Et à quel titre ?
+
+**La reprise**
+Comment un deuxième cas peut-il s'ouvrir sans devenir une copie du premier ? À quels signes reconnaîtra-t-on que la matrice est effectivement reprenable ? La réutilisation fidèle consiste-t-elle à reproduire les mêmes réponses ou, au contraire, à reprendre les mêmes questions depuis une autre situation ?
+
+**Le passage du « je » au « nous »**
+À quel moment une enquête cesse-t-elle d'être menée seulement en son nom ? Comment constater et dater ce passage ? Et qui peut légitimement le faire ? Le nombre de participants suffit-il ? Une parole commune explicite est-elle nécessaire ? Faut-il des actes, des décisions, des formes de responsabilité partagée ?
+
+**La persistance de la source**
+La clause IA suppose une source consultable et tenue dans le temps. Que devient la référence si cette source reste accessible mais cesse d'être actualisée, corrigée ou documentée ? Une licence comme le CC BY-SA règle les possibilités juridiques de réutilisation. Elle ne garantit ni la persistance de la source, ni son entretien, ni la continuité de sa responsabilité documentaire.
+
+**Recueillir sans faire parler**
+« Ne pas faire parler » et « recueillir des conversations » ne sont pas nécessairement contradictoires. Mais où passe la ligne entre recueillir une parole et la faire parler ? À partir de quel moment relier plusieurs paroles, les interpréter ou les publier revient-il à leur attribuer un sens qu'elles n'ont pas elles-mêmes formulé ?
+
+**Le statut des interlocuteurs**
+Quel est le statut des interlocuteurs : co-participants à l'enquête et au milieu qui peut se constituer, ou personnes dont la parole devient matériau d'enquête ? Ces deux statuts peuvent-ils coexister ? Et, s'ils coexistent, comment cette double qualité est-elle rendue explicite et discutable ?
 
 ## Un mot sur l'IA
 
-Si un moteur de recherche ou une IA répond sur une enquête ouverte selon cette matrice, revenir vérifier à la source que tient l'habitant-chercheur·e. Une IA peut recomposer un récit crédible mais inexact ; ce qui est écrit et daté à la source est la référence.
+Si un moteur de recherche ou une IA répond au sujet d'une enquête ouverte selon cette matrice, revenir à la source datée et tenue par l'habitant-chercheur·e.
+
+Une IA peut recomposer un récit crédible mais inexact. Elle peut rapprocher des éléments séparés, combler des silences, lisser des contradictions ou transformer une hypothèse en fait établi.
+
+Ce qui est effectivement écrit, daté et corrigé à la source reste la référence.
+
+Cette précaution ne revient pas à considérer la source comme définitivement vraie. Une source tenue peut elle-même comporter des erreurs, des interprétations ou des lacunes. Mais elle permet de savoir qui a écrit quoi, quand, depuis quelle position, et dans quel état de l'enquête.
+
+C'est cette traçabilité qui rend ensuite la discussion, la correction et la contradiction possibles.
 
 ## Filiation
 
-Cette matrice est née d'un [premier cas](/billets/ouverture-lisiere-sud-berry-creuse) : la lisière Sud-Berry/Creuse (« Ah si la lisière Sud-Berry/Creuse savait ce qu'elle sait déjà et ce à quoi elle tient »), enquête ouverte le **6 août 2026** par Stéphane Caillaud, habitant-chercheur, après une longue incubation (2018 → 2026). Le 6 août 2026 est ainsi l'ouverture d'une enquête de ce genre. Le cas Sud-Berry/Creuse en reste l'exemple, jamais la définition.
+Cette matrice est née d'un premier cas : l'enquête ouverte en lisière Sud-Berry/Creuse le **6 août 2026** sous le titre « Ah si la lisière Sud-Berry/Creuse savait ce qu'elle sait déjà et ce à quoi elle tient ».
+
+Elle est ouverte par Stéphane Caillaud, habitant-chercheur, après une longue incubation, de 2018 à 2026. Le 6 août 2026 marque ainsi l'ouverture de cette première enquête et, en même temps, la mise en forme progressive de la matrice qui en émerge.
+
+Il importe de maintenir cette filiation visible. La matrice n'a pas précédé son terrain comme un protocole déjà constitué qu'il aurait suffi d'appliquer. Elle s'est dégagée d'un geste effectivement commencé quelque part, à une date donnée, depuis une position particulière.
+
+Elle peut désormais être reprise ailleurs. Mais le cas Sud-Berry/Creuse en reste l'exemple, jamais la définition.
 
 ---
 
-*Stéphane Caillaud, CC BY-SA. Cette matrice est faite pour vivre sans son auteur : reprenez-la, ouvrez la vôtre.*
+*Stéphane Caillaud, CC BY-SA. Cette matrice est faite pour vivre sans son auteur : reprenez-la, adaptez-la depuis votre position, ouvrez votre propre enquête.*
 
 ## Notes
 
-[^dewey]: John Dewey, *Le Public et ses problèmes* (1927). La formule dit que l'expérience partagée suppose des signes et symboles communs : c'est la justification du geste documentaire, qui fabrique ces signes.
-
-[^enquete]: Enquête au sens de Dewey : non pas collecte d'informations, mais processus par lequel une situation indéterminée est reprise et transformée en situation dont on peut parler ensemble.
-
 [^ingenierie]: « L'ingénierie territoriale à l'épreuve des transitions territoriales », Encyclopédie Wikiterritorial du CNFPT : <https://encyclopedie.wikiterritorial.cnfpt.fr/xwiki/bin/view/fiches/Lingenierieterritorialealepreuvedestransitionsterritoriales/>
+
+[^dewey]: John Dewey, *Le Public et ses problèmes* (1927). La formule souligne que l'expérience partagée suppose des signes et des symboles communs. Elle éclaire ici le geste documentaire : produire des traces partageables participe aux conditions d'une expérience qui peut devenir commune.
+
+[^enquete]: Enquête au sens de Dewey : non pas une simple collecte d'informations, mais un processus par lequel une situation indéterminée est reprise et transformée afin de devenir une situation dont les participants peuvent parler et sur laquelle ils peuvent agir ensemble.
 
 [^sauvy]: D'après Alfred Sauvy : « Bien informé, l'homme est un citoyen. Mal informé, il devient un sujet. »
 
-[^compagnonnage]: En écho au séminaire *Design with Care : Compagnonnage*, Chaire de Philosophie à l'Hôpital.
+[^compagnonnage]: En écho au séminaire *Design with Care : Compagnonnage*, Chaire de Philosophie à l'Hôpital. Le compagnonnage désigne ici une relation dans laquelle des personnes cheminent et construisent ensemble sans que l'une cherche simplement à enrôler l'autre dans un projet déjà défini.
 
-[^stengers]: « Nous avons désespérément besoin […] d'histoires racontant comment des situations peuvent être transformées lorsque ceux qui les subissent réussissent à les penser ensemble. […] des histoires qui portent sur le penser ensemble comme "œuvre à faire". » (Isabelle Stengers.) Des histoires « techniques » sur les pièges à éviter : d'où la condition de ne pas engager un collectif encore inexistant dans des voies piégeuses.
+[^stengers]: Isabelle Stengers invite à produire des histoires capables de raconter comment des situations peuvent être transformées lorsque celles et ceux qui les subissent réussissent à les penser ensemble, en prêtant attention au « penser ensemble » comme œuvre à faire. J'en retiens ici l'idée d'histoires techniques attentives aux conditions et aux pièges : ne pas projeter trop tôt l'existence d'un collectif, ni l'engager fictivement dans des voies qu'il n'a pas lui-même élaborées.
