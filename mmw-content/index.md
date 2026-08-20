@@ -46,7 +46,7 @@ Ce n'est encore ni un réseau constitué ni une parole collective. C'est une hyp
 Ce qui cherche à être transmis ici n'est pas un contenu (chaque premier kilomètre a le sien), mais une **posture** et un **protocole** : recueillir, relier, dater et publier de première main.
 
 > « Notre Babel n'est pas de langues mais de signes et de symboles ; sans ceux-ci une expérience partagée est impossible. »
-> — John Dewey[^dewey]
+> John Dewey[^dewey]
 
 La page datée contribue ainsi à fabriquer des signes partageables, sans lesquels une expérience commune ne peut se construire.
 
