@@ -42,6 +42,8 @@ export const sharedPageComponents: SharedLayout = {
 
   footer: Component.Footer({
     links: {
+      "cooplab.org": "https://cooplab.org",
+      "these.cooplab.org": "https://these.cooplab.org",
       "CC BY-SA": "https://creativecommons.org/licenses/by-sa/4.0/",
     },
   }),

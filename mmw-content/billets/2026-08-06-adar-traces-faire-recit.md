@@ -6,7 +6,7 @@ auteur: Stéphane Caillaud
 licence: CC BY-SA 4.0
 type: récit situé
 statut: en cours
-draft: false
+draft: true
 description: "Frise de la vie associative de l'ADAR-CIVAM (1982-2026) lue comme communauté apprenante : tension grande histoire / petites histoires locales, cinq questions de l'évaluation développementale, horizon PNR-TICA. Préfiguration involontaire, pas contribution intentionnelle."
 tags: [adar-civam, communaute-apprenante, pnr-sud-berry, tica, apprendre-dans-l-action, faire-recit, boischaut-sud, sciences-citoyennes]
 chantier: lisieres
