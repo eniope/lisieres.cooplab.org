@@ -1,4 +1,5 @@
 ---
+uid: quels-futurs-essayer-monde-commun-frequentable
 title: "Quels futurs pouvons-nous essayer, ici, pour garder un monde commun fréquentable ?"
 subtitle: "Une question que je porte depuis la lisière, et une invitation à l'essayer ensemble."
 date: 2026-08-14
